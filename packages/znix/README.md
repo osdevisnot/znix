@@ -3,9 +3,9 @@
 > A javascript micro-framework for Next Generation Web Apps
 
 [![Build Status](https://travis-ci.org/osdevisnot/znix.svg?branch=master)](https://travis-ci.org/osdevisnot/znix)
-[![The Uncompressed size of zenix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
-[![The GZIP size of zenix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
-[![The Brotli size of zenix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
+[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
+[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
+[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/osdevisnot/znix.svg)](https://greenkeeper.io/)
 
 ## Features
@@ -19,7 +19,7 @@
 - **Instantly Productive**
   - `render` gets `state` and `dispatch`
   - Connected Components efficiently **auto update on state changes**
-- **Simple & Familiar** - Build apps using launguages you already know
+- **Simple & Familiar** - Build apps using languages you already know
 
 ## Installation
 
@@ -51,6 +51,10 @@ import { Component, render } from '@znix/znix'
 - [ ] Better Error Messages (for improved DX)
 - [ ] Better Documentation
 - [ ] Minimalistic SPA router
+
+## API
+
+See [docs directory](docs/README.md)
 
 ## Contributing
 

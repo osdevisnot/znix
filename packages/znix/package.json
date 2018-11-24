@@ -14,13 +14,15 @@
     "build": "rollup -c",
     "coverage": "jest --coverage",
     "start": "rollup -wc",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "predocs": "rm -rf docs",
+    "docs": "typedoc"
   },
   "dependencies": {
     "lit-html": "0.13.0"
   },
   "devDependencies": {
-    "tslib-cli": "0.0.22"
+    "tslib-cli": "0.0.24"
   },
   "peerDependencies": {
     "lit-html": "0.13.0"

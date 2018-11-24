@@ -1,40 +1,32 @@
-import { render } from 'lit-html';
+/**
+ * @module Component
+ */
+import { PureComponent } from './pure-component';
 import { store } from './store';
 
-class PureComponent extends HTMLElement {
-  root: ShadowRoot;
-  render: any;
-  constructor() {
-    super();
-    this.root = this.attachShadow({ mode: 'open' });
-  }
-  connectedCallback() {
-    this.flush();
-  }
-  attributeChangedCallback() {
-    this.flush();
-  }
-  flush() {
-    if (this.render) {
-      render(this.render(store.state, store.dispatch), this.root, { eventContext: this });
-    }
-  }
-}
-
+/**
+ * Connected Component for Znix Applications
+ * @noInheritDoc
+ */
 class Component extends PureComponent {
+  /**
+   * Invoked each time the state in store changes.
+   */
   stateChanged = () => super.flush();
+  /**
+   * Invoked each time the custom element is appended into a document-connected element. This will happen each time
+   * the node is moved, and may happen before the element's contents have been fully parsed.
+   */
   connectedCallback() {
     store.on(this.stateChanged);
     super.connectedCallback();
   }
+  /**
+   * Invoked each time the custom element is disconnected from the document's DOM.
+   */
   disconnectedCallback() {
     store.off(this.stateChanged);
   }
 }
 
-function Element(tag, clz?) {
-  if (clz) return customElements.define(tag, clz);
-  return (clazz: any) => customElements.define(tag, clazz);
-}
-
-export { PureComponent, Component, Element };
+export { Component };
