@@ -4,6 +4,9 @@
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
+  "files": [
+    "dist"
+  ],
   "main": "dist/znix.js",
   "typings": "dist/src/znix.d.ts",
   "scripts": {
