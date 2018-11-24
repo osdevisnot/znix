@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "examples/00_hello-world/package.json",
+        "examples/01_counter-demo/package.json",
+        "package.json",
+        "packages/znix/package.json"
+      ]
+    }
+  }
+}
