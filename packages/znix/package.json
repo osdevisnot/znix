@@ -7,6 +7,7 @@
   "main": "dist/znix.js",
   "typings": "dist/src/znix.d.ts",
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "rollup -c",
     "coverage": "jest --coverage",
     "start": "rollup -wc",
@@ -20,5 +21,8 @@
   },
   "peerDependencies": {
     "lit-html": "0.13.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

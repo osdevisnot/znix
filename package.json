@@ -9,6 +9,7 @@
     "preboot": "lerna bootstrap",
     "boot": "lerna run coverage",
     "postboot": "lerna run build",
+    "pub": "lerna publish",
     "presetup": "git clean -fdX",
     "setup": "npm install",
     "postsetup": "npm run boot"
