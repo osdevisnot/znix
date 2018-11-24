@@ -10,16 +10,16 @@
 
 ## Features
 
-- **Small Footprint** Components with lifecycles + Built in Store in < 4 KB
+- **Small Footprint** Components with Lifecycle + Built-in Store in < 4 KB
 - **Fast** built with efficient [lit-html](https://github.com/Polymer/lit-html)
 - **Best DX** - **No Build Step** + **Redux devtools integration**
 - **Standard Compliant** Based on Web Components Standard
-- **Familier** Ideas from Redux like libraries
-- **Convinient** Connected Components without boilerplate
+- **Familiar** Ideas from Redux like libraries
+- **Convenient** Connected Components without boilerplate
 - **Instantly Productive**
   - `render` gets `state` and `dispatch`
   - Connected Components efficiently **auto update on state changes**
-- **Simple & Familier** - Build apps using launguages you already know
+- **Simple & Familiar** - Build apps using launguages you already know
 
 ## Installation
 
@@ -36,7 +36,7 @@ or Install it from NPM:
 npm install @znix/znix
 ```
 
-Then with module bundler like [parcel](https://parceljs.org/) or [rollup](https://rollupjs.org/guide/en), use as you would anything else:
+Then with a module bundler like [parcel](https://parceljs.org/) or [rollup](https://rollupjs.org/guide/en), use as you would anything else:
 
 ```
 import { Component, render } from '@znix/znix'
