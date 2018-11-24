@@ -2,6 +2,10 @@
 
 > A javascript micro-framework for Next Generation Web Apps
 
+[![Build Status](https://travis-ci.org/osdevisnot/znix.svg?branch=master)](https://travis-ci.org/osdevisnot/znix)
+[![The Uncompressed size of zenix](http://img.badgesize.io/https://unpkg.com/@znix/znix?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
+[![The GZIP size of zenix](http://img.badgesize.io/https://unpkg.com/@znix/znix?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
+[![The Brotli size of zenix](http://img.badgesize.io/https://unpkg.com/@znix/znix?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
