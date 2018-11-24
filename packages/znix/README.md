@@ -2,6 +2,8 @@
 
 > A javascript micro-framework for Next Generation Web Apps
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 ## Features
 
 - **Small Footprint** Components with lifecycles + Built in Store in < 4 KB
