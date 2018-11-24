@@ -19,7 +19,7 @@
 - **Instantly Productive**
   - `render` gets `state` and `dispatch`
   - Connected Components efficiently **auto update on state changes**
-- **Simple & Familiar** - Build apps using launguages you already know
+- **Simple & Familiar** - Build apps using languages you already know
 
 ## Installation
 
