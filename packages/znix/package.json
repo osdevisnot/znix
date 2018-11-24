@@ -1,0 +1,24 @@
+{
+  "name": "@znix/znix",
+  "version": "0.1.0",
+  "description": "A javascript micro-framework for Next Generation Web Apps",
+  "license": "MIT",
+  "author": "osdevisnot <osdevisnot@gmail.com>",
+  "main": "dist/znix.js",
+  "typings": "dist/src/znix.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "coverage": "jest --coverage",
+    "start": "rollup -wc",
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "lit-html": "0.13.0"
+  },
+  "devDependencies": {
+    "tslib-cli": "0.0.22"
+  },
+  "peerDependencies": {
+    "lit-html": "0.13.0"
+  }
+}

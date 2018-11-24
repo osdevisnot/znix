@@ -1,0 +1,23 @@
+{
+  "name": "@znix/znix",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A javascript micro-framework for Next Generation Web Apps",
+  "license": "MIT",
+  "author": "osdevisnot <osdevisnot@gmail.com>",
+  "scripts": {
+    "preboot": "lerna bootstrap",
+    "boot": "lerna run coverage",
+    "postboot": "lerna run build",
+    "presetup": "git clean -fdX",
+    "setup": "npm install",
+    "postsetup": "npm run boot"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "lerna": "3.4.3"
+  }
+}
