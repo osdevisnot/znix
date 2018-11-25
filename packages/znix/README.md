@@ -54,7 +54,7 @@ import { Component, render } from '@znix/znix'
 
 ## API
 
-See [docs directory](docs/README.md)
+See the [docs directory](https://github.com/osdevisnot/znix/tree/master/packages/znix/docs)
 
 ## Contributing
 

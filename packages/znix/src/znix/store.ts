@@ -24,7 +24,17 @@ const store = {
    * @param handler an event handler
    */
   off(handler) {
-    _listeners = _listeners.splice(_listeners.indexOf(handler) >>> 1, 0);
+    const newListeners = [];
+    let i = 0,
+      len = _listeners.length;
+    for (; i < len; i++) {
+      if (_listeners[i] === handler) {
+        handler = null;
+      } else {
+        newListeners.push(_listeners[i]);
+      }
+    }
+    _listeners = newListeners;
   },
   /**
    * Subscribe to store updates
