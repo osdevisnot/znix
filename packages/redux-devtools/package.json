@@ -1,0 +1,25 @@
+{
+  "name": "@znix/redux-devtools",
+  "version": "0.1.7",
+  "license": "MIT",
+  "author": "osdevisnot <osdevisnot@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/devtools.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "rollup -c",
+    "start": "rollup -wc"
+  },
+  "devDependencies": {
+    "@znix/znix": "0.1.7",
+    "tslib-cli": "0.0.25"
+  },
+  "peerDependencies": {
+    "@znix/znix": "0.1.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

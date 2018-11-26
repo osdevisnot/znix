@@ -113,6 +113,8 @@ ___
 
 ▸ **flush**(): `void`
 
+flush the render cache to DOM. This method should not be overridden in extended class
+
 **Returns:** `void`
 
 ___

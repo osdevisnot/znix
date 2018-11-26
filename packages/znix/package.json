@@ -23,7 +23,7 @@
     "lit-html": "0.13.0"
   },
   "devDependencies": {
-    "tslib-cli": "0.0.24"
+    "tslib-cli": "0.0.25"
   },
   "peerDependencies": {
     "lit-html": "0.13.0"
