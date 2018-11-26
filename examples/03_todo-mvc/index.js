@@ -5,37 +5,28 @@ const FILTERS = { all: 0, active: 1, completed: 2 };
 const initialState = { input: '', todos: [], filter: FILTERS.all, uuid: 0 };
 
 const actions = {
-  input: ({ state, payload }) => ({ input: payload }),
+  input: ({ payload }) => ({ input: payload }),
   save: ({ state, payload }) => {
     const todos = state.todos;
-    todos.push({
-      id: state.uuid++,
-      description: payload,
-      done: false
-    });
+    todos.push({ id: state.uuid++, description: payload, done: false });
     return { input: '', todos };
   },
   done: ({ state, payload }) => {
     const todos = state.todos;
-    todos.map(todo => {
-      if (todo.id === payload) {
-        todo.done = !todo.done;
-      }
-    });
+    todos.map(todo => payload === todo.id && (todo.done = !todo.done));
     return { todos };
   },
   delete: ({ state, payload }) => {
     const todos = state.todos.filter(todo => todo.id !== payload);
     return { todos };
   },
-  clear: ({ state, payload }) => {
+  clear: ({ state }) => {
     const todos = state.todos.filter(todo => !todo.done);
     return { todos };
   },
-  filter: ({ state, payload }) => ({ filter: payload }),
-  fetch: ({ state, payload }) => {
-    const storage = JSON.parse(localStorage.getItem('znix-state') || '{}');
-    return storage;
+  filter: ({ payload }) => ({ filter: payload }),
+  fetch: () => {
+    return JSON.parse(localStorage.getItem('znix-state') || '{}');
   }
 };
 
@@ -51,19 +42,19 @@ class TodoInput extends Component {
       store.dispatch('save', event.target.value);
     }
   }
-  render({ state, dispatch }) {
+  render({ state }) {
     return html`
       <style>
         :host input {
-          width: calc(100% - 47px);
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 40px;
+          border: none;
           font-size: 24px;
           font-weight: 300;
+          height: 40px;
+          left: 0;
           margin-left: 45px;
-          border: none;
+          position: absolute;
+          top: 0;
+          width: calc(100% - 47px);
         }
         :host input {
           outline: none;
@@ -75,7 +66,10 @@ class TodoInput extends Component {
 }
 Element('todo-input', TodoInput);
 class TodoList extends Component {
-  render({ state, dispatch }) {
+  render({ state }) {
+    const todos = state.todos.filter(todo =>
+      state.filter === FILTERS.active ? !todo.done : state.filter === FILTERS.completed ? todo.done : todo
+    );
     return html`
       <style>
         :host ul {
@@ -85,68 +79,60 @@ class TodoList extends Component {
       </style>
       <ul>
         ${
-          state.todos
-            .filter(todo =>
-              state.filter === FILTERS.active ? !todo.done : state.filter === FILTERS.completed ? todo.done : todo
-            )
-            .map(
-              todo =>
-                html`
-                  <todo-item .todo="${todo}"></todo-item>
-                `
-            )
+          todos.map(
+            todo =>
+              html`
+                <todo-item .todo="${todo}"></todo-item>
+              `
+          )
         }
       </ul>
     `;
   }
 }
 Element('todo-list', TodoList);
+
 class TodoItem extends Component {
   render({ state, dispatch }) {
     return html`
       <style>
         :host li {
-          padding: 2px 0;
-          list-style: none;
-          line-height: 1.2em;
           font-size: 24px;
+          line-height: 1.2em;
+          list-style: none;
+          padding: 2px 0;
           position: relative;
         }
         :host span {
+          background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+          background-position: center left;
+          background-repeat: no-repeat;
+          display: block;
+          min-height: 35px;
           padding-left: 45px;
           padding-right: 40px;
-          display: block;
-          background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
-          background-repeat: no-repeat;
-          min-height: 35px;
-          background-position: center left;
         }
         :host span.checked {
           background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
         }
         :host input {
-          width: 20px;
-          position: absolute;
-          left: 0;
-          top: 0;
+          border-radius: 0;
           height: 100%;
-          width: 40px;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
+          left: 0;
           opacity: 0;
+          position: absolute;
+          top: 0;
+          width: 40px;
         }
         :host button {
+          background-color: #fff;
+          border-radius: 0;
           border: none;
-          width: 40px;
+          height: 100%;
           position: absolute;
           right: 0;
           top: 0;
-          height: 100%;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-          background-color: #fff;
+          width: 40px;
         }
         :host button {
           outline: none;
@@ -170,54 +156,41 @@ class TodoFilter extends Component {
     return html`
       <style>
         :host {
-          display: flex;
           align-items: center;
+          display: flex;
           justify-content: space-between;
-          padding: 5px;
           margin: 0 5px;
+          padding: 5px;
         }
         :host button {
-          border: 1px solid #fff;
           background-color: #fff;
           border-radius: 0;
+          border: 1px solid #fff;
           font-size: 14px;
-        }
-        :host button {
           outline: none;
         }
         :host button:hover {
           border-bottom: 1px solid rgba(175, 47, 47, 0.2);
         }
-        :host button.active {
+        :host button[active] {
           border: 1px solid rgba(175, 47, 47, 0.2);
         }
-        :host .hidden {
+        :host button[hidden] {
           visibility: hidden;
         }
       </style>
       <div>${done.length} items left.</div>
       <div>
-        <button
-          class="${state.filter === FILTERS.all ? 'active' : ''}"
-          @click="${e => dispatch('filter', FILTERS.all)}"
-        >
-          All
-        </button>
-        <button
-          class="${state.filter === FILTERS.active ? 'active' : ''}"
-          @click="${e => dispatch('filter', FILTERS.active)}"
-        >
+        <button ?active="${state.filter === FILTERS.all}" @click="${e => dispatch('filter', FILTERS.all)}">All</button>
+        <button ?active="${state.filter === FILTERS.active}" @click="${e => dispatch('filter', FILTERS.active)}">
           Active
         </button>
-        <button
-          class="${state.filter === FILTERS.completed ? 'active' : ''}"
-          @click="${e => dispatch('filter', FILTERS.completed)}"
-        >
+        <button ?active="${state.filter === FILTERS.completed}" @click="${e => dispatch('filter', FILTERS.completed)}">
           Completed
         </button>
       </div>
       <div>
-        <button class="${done.length === state.todos.length ? 'hidden' : ''}" @click="${e => dispatch('clear')}">
+        <button ?hidden="${done.length === state.todos.length}" @click="${e => dispatch('clear')}">
           Clear Completed
         </button>
       </div>
@@ -225,15 +198,15 @@ class TodoFilter extends Component {
   }
 }
 Element('todo-filter', TodoFilter);
-class TodoFooter extends Component {
-  render({ state, dispatch }) {
+class TodoFooter extends PureComponent {
+  render() {
     return html`
       <style>
         :host {
-          display: block;
-          text-align: center;
-          margin-top: 50px;
           color: rgba(175, 47, 47, 0.15);
+          display: block;
+          margin: 50px 0;
+          text-align: center;
         }
         :host a {
           text-decoration: none;
@@ -253,16 +226,16 @@ class ZnixApp extends PureComponent {
           display: block;
         }
         :host h1 {
+          color: rgba(175, 47, 47, 0.15);
           font-size: 100px;
           font-weight: 100;
           text-align: center;
-          color: rgba(175, 47, 47, 0.15);
         }
         :host .container {
-          max-width: 75%;
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
           margin-left: auto;
           margin-right: auto;
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+          max-width: 75%;
           position: relative;
         }
       </style>
