@@ -3,15 +3,15 @@
 > A javascript micro-framework for Next Generation Web Apps
 
 [![Build Status](https://travis-ci.org/osdevisnot/znix.svg?branch=master)](https://travis-ci.org/osdevisnot/znix)
-[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
-[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
-[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.5/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
+[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.6/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
+[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.6/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
+[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.6/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/osdevisnot/znix.svg)](https://greenkeeper.io/)
 
 ## Features
 
-- **Small Footprint** Components with Lifecycle + Built-in Store in < 4 KB
-- **Fast** built with efficient [lit-html](https://github.com/Polymer/lit-html)
+- **Small Footprint** Components with Lifecycle + Built-in Store in < 5 KB
+- **Fast** built with fast & efficient [lit-html](https://github.com/Polymer/lit-html)
 - **Best DX** - **No Build Step** + **Redux devtools integration**
 - **Standard Compliant** Based on Web Components Standard
 - **Familiar** Ideas from Redux like libraries
@@ -41,18 +41,6 @@ Then with a module bundler like [parcel](https://parceljs.org/) or [rollup](http
 ```
 import { Component, render } from '@znix/znix'
 ```
-
-## Roadmap
-
-- [ ] Add todomvc example
-- [ ] IE11 Support
-  - [ ] template polyfill
-  - [ ] legacy es5 build + custom element polyfill
-- [ ] Better Typings
-- [ ] Better Error Messages (for improved DX)
-- [ ] Better Documentation
-- [ ] Minimalistic SPA router
-- [ ] Add HNPWA example
 
 ## API
 

@@ -12,6 +12,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
+    "postbuild": "npm run docs",
     "coverage": "jest --coverage",
     "start": "rollup -wc",
     "test": "jest --watch",
