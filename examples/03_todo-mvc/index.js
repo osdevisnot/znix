@@ -146,6 +146,7 @@ class TodoItem extends Component {
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
+          background-color: #fff;
         }
         :host button {
           outline: none;
@@ -177,6 +178,7 @@ class TodoFilter extends Component {
         }
         :host button {
           border: 1px solid #fff;
+          background-color: #fff;
           border-radius: 0;
           font-size: 14px;
         }
@@ -223,6 +225,25 @@ class TodoFilter extends Component {
   }
 }
 Element('todo-filter', TodoFilter);
+class TodoFooter extends Component {
+  render({ state, dispatch }) {
+    return html`
+      <style>
+        :host {
+          display: block;
+          text-align: center;
+          margin-top: 50px;
+          color: rgba(175, 47, 47, 0.15);
+        }
+        :host a {
+          text-decoration: none;
+        }
+      </style>
+      Created with ❤️ by <a href="https://github.com/osdevisnot">osdevisnot</a>
+    `;
+  }
+}
+Element('todo-footer', TodoFooter);
 
 class ZnixApp extends PureComponent {
   render({ state, dispatch }) {
@@ -251,6 +272,7 @@ class ZnixApp extends PureComponent {
         <todo-list></todo-list>
         <todo-filter></todo-filter>
       </div>
+      <todo-footer></todo-footer>
     `;
   }
 }
