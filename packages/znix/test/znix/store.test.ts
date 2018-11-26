@@ -39,7 +39,7 @@ describe('store', () => {
     store.register(
       { count: 10 },
       {
-        up: (state, payload) => ({ count: state.count + 1 })
+        up: ({ state, payload }) => ({ count: state.count + 1 })
       }
     );
     store.dispatch('up');
@@ -60,7 +60,7 @@ describe('store', () => {
         count: 10
       },
       {
-        downBy: (state, payload) => ({ count: state.count - payload })
+        downBy: ({ state, payload }) => ({ count: state.count - payload })
       }
     );
     store.dispatch('downBy', 5);
@@ -70,7 +70,7 @@ describe('store', () => {
     store.register(
       {},
       {
-        fetch: (state, payload) => {
+        fetch: ({ state, payload }) => {
           return new Promise((resolve, reject) => {
             process.nextTick(() => {
               resolve({ name: 'async' });

@@ -3,15 +3,15 @@ const { Component, html, Element, store } = znix;
 const initialState = { count: 0 };
 
 const actions = {
-  up: (state, payload) => ({ count: state.count + 1 }),
-  down: (state, payload) => ({ count: state.count - 1 }),
-  upBy: (state, payload) => ({ count: state.count + payload })
+  up: ({ state, payload }) => ({ count: state.count + 1 }),
+  down: ({ state, payload }) => ({ count: state.count - 1 }),
+  upBy: ({ state, payload }) => ({ count: state.count + payload })
 };
 
 store.register(initialState, actions);
 
 class CounterDemo extends Component {
-  render(state, dispatch) {
+  render({ state, dispatch }) {
     return html`
       <h3>Counter: ${state.count}</h3>
       <button @click="${e => dispatch('up')}">+</button> <button @click="${e => dispatch('down')}">-</button>

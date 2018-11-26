@@ -44,7 +44,7 @@ class PureComponent extends HTMLElement {
    * flush the render cache to DOM. This method should not be overridden in extended class */
   flush() {
     if (this.render) {
-      render(this.render(store.state, store.dispatch), this.root, { eventContext: this });
+      render(this.render({ state: store.state, dispatch: store.dispatch }), this.root, { eventContext: this });
     }
   }
 }

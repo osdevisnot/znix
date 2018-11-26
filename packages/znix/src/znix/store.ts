@@ -76,7 +76,7 @@ const store = {
    */
   dispatch(action, payload?) {
     if (_actions[action]) {
-      const update = _actions[action](_state, payload);
+      const update = _actions[action]({ state: _state, payload: payload });
       if (update.then) {
         return update.then(res => {
           return store.setState(res, action);

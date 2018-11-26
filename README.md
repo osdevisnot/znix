@@ -3,9 +3,9 @@
 > A javascript micro-framework for Next Generation Web Apps
 
 [![Build Status](https://travis-ci.org/osdevisnot/znix.svg?branch=master)](https://travis-ci.org/osdevisnot/znix)
-[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.6/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
-[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.6/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
-[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.6/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
+[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.7/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
+[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.7/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
+[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.7/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/osdevisnot/znix.svg)](https://greenkeeper.io/)
 
 ## Features

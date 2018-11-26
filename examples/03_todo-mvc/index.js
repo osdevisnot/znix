@@ -5,8 +5,8 @@ const FILTERS = { all: 0, active: 1, completed: 2 };
 const initialState = { input: '', todos: [], filter: FILTERS.all, uuid: 0 };
 
 const actions = {
-  input: (state, payload) => ({ input: payload }),
-  save: (state, payload) => {
+  input: ({ state, payload }) => ({ input: payload }),
+  save: ({ state, payload }) => {
     const todos = state.todos;
     todos.push({
       id: state.uuid++,
@@ -15,7 +15,7 @@ const actions = {
     });
     return { input: '', todos };
   },
-  done: (state, payload) => {
+  done: ({ state, payload }) => {
     const todos = state.todos;
     todos.map(todo => {
       if (todo.id === payload) {
@@ -24,16 +24,16 @@ const actions = {
     });
     return { todos };
   },
-  delete: (state, payload) => {
+  delete: ({ state, payload }) => {
     const todos = state.todos.filter(todo => todo.id !== payload);
     return { todos };
   },
-  clear: (state, payload) => {
+  clear: ({ state, payload }) => {
     const todos = state.todos.filter(todo => !todo.done);
     return { todos };
   },
-  filter: (state, payload) => ({ filter: payload }),
-  fetch: (state, payload) => {
+  filter: ({ state, payload }) => ({ filter: payload }),
+  fetch: ({ state, payload }) => {
     const storage = JSON.parse(localStorage.getItem('znix-state') || '{}');
     return storage;
   }
@@ -42,7 +42,6 @@ const actions = {
 store.register(initialState, actions);
 store.dispatch('fetch');
 store.on((state, action) => localStorage.setItem('znix-state', JSON.stringify(state)));
-store.on(console.log);
 
 class TodoInput extends Component {
   handleInput(event) {
@@ -52,7 +51,7 @@ class TodoInput extends Component {
       store.dispatch('save', event.target.value);
     }
   }
-  render(state, dispatch) {
+  render({ state, dispatch }) {
     return html`
       <style>
         :host input {
@@ -76,7 +75,7 @@ class TodoInput extends Component {
 }
 Element('todo-input', TodoInput);
 class TodoList extends Component {
-  render(state, dispatch) {
+  render({ state, dispatch }) {
     return html`
       <style>
         :host ul {
@@ -103,7 +102,7 @@ class TodoList extends Component {
 }
 Element('todo-list', TodoList);
 class TodoItem extends Component {
-  render(state, dispatch) {
+  render({ state, dispatch }) {
     return html`
       <style>
         :host li {
@@ -165,7 +164,7 @@ class TodoItem extends Component {
 }
 Element('todo-item', TodoItem);
 class TodoFilter extends Component {
-  render(state, dispatch) {
+  render({ state, dispatch }) {
     const done = state.todos.filter(todo => !todo.done);
     return html`
       <style>
@@ -226,7 +225,7 @@ class TodoFilter extends Component {
 Element('todo-filter', TodoFilter);
 
 class ZnixApp extends PureComponent {
-  render(state, dispatch) {
+  render({ state, dispatch }) {
     return html`
       <style>
         :host {
