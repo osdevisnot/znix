@@ -12,6 +12,10 @@ Base class for Znix Components
 
 ↳  [Component](component.component-1.md)
 
+↳  [Router](router.router-1.md)
+
+↳  [ZnixLink](router.znixlink.md)
+
 ## Index
 
 ### Constructors
@@ -20,7 +24,6 @@ Base class for Znix Components
 
 ### Properties
 
-* [render](purecomponent.purecomponent-1.md#render)
 * [root](purecomponent.purecomponent-1.md#root)
 * [HTMLElement](purecomponent.purecomponent-1.md#htmlelement)
 
@@ -29,6 +32,7 @@ Base class for Znix Components
 * [attributeChangedCallback](purecomponent.purecomponent-1.md#attributechangedcallback)
 * [connectedCallback](purecomponent.purecomponent-1.md#connectedcallback)
 * [flush](purecomponent.purecomponent-1.md#flush)
+* [render](purecomponent.purecomponent-1.md#render)
 
 ---
 
@@ -48,15 +52,6 @@ ___
 
 ## Properties
 
-<a id="render"></a>
-
-###  render
-
-**● render**: *`any`*
-
-The render method must be defined in the Component extending this base class. Skipping `render` definition would render a no op for a custom element.
-
-___
 <a id="root"></a>
 
 ###  root
@@ -111,11 +106,34 @@ ___
 
 ###  flush
 
-▸ **flush**(): `void`
+▸ **flush**(options?: *`any`*): `void`
 
 flush the render cache to DOM. This method should not be overridden in extended class
 
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` options | `any` |  additional options to pass to instance's render function |
+
 **Returns:** `void`
+
+___
+<a id="render"></a>
+
+### `<Abstract>` render
+
+▸ **render**(options?: *`any`*): `any`
+
+The render method must be defined in the Component extending this base class. Skipping `render` definition would render a no op for a custom element.
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` options | `any` |
+
+**Returns:** `any`
 
 ___
 

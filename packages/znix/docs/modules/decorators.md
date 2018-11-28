@@ -16,7 +16,7 @@
 
 ###  Element
 
-▸ **Element**(tag: *`any`*, clx?: *`any`*):  `void` &#124; `(Anonymous function)`
+▸ **Element**(tag: *`string`*, clx?: *`any`*): `any`
 
 A Decorator to define a custom element
 *__example__*: ```
@@ -31,10 +31,10 @@ Element('my-comp', MyComp)
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| tag | `any` |  name of custom element's tag |
+| tag | `string` |  name of custom element's tag |
 | `Optional` clx | `any` |  class reference when not using as a decorator |
 
-**Returns:**  `void` &#124; `(Anonymous function)`
+**Returns:** `any`
 
 ___
 

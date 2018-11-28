@@ -8,7 +8,7 @@ import { store } from './store';
  * Connected Component for Znix Applications
  * @noInheritDoc
  */
-class Component extends PureComponent {
+abstract class Component extends PureComponent {
   /**
    * Invoked each time the state in store changes.
    */

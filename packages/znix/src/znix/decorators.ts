@@ -13,7 +13,7 @@
  *     class MyComp extends Component {...}
  *     Element('my-comp', MyComp)
  */
-function Element(tag, clx?) {
+function Element(tag: string, clx?: any): any {
   if (clx) return customElements.define(tag, clx);
   return (clazz: any) => customElements.define(tag, clazz);
 }

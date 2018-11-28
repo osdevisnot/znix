@@ -8,6 +8,7 @@
     "dist"
   ],
   "main": "dist/znix.js",
+  "module": "dist/znix.esm.js",
   "typings": "dist/src/znix.d.ts",
   "scripts": {
     "prebuild": "rm -rf dist",

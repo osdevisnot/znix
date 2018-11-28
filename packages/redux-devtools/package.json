@@ -17,7 +17,7 @@
     "tslib-cli": "0.0.25"
   },
   "peerDependencies": {
-    "@znix/znix": "0.1.7"
+    "@znix/znix": "*"
   },
   "publishConfig": {
     "access": "public"

@@ -7,7 +7,7 @@ import { store } from './store';
  * Base class for Znix Components
  * @noInheritDoc
  */
-class PureComponent extends HTMLElement {
+abstract class PureComponent extends HTMLElement {
   /**
    * The root node of Shadow DOM. Often referred as Shadow Root. Once the custom element is mounted, this can be
    * accessed using `container.shadowRoot.querySelector('#selector')`
@@ -16,8 +16,9 @@ class PureComponent extends HTMLElement {
   /**
    * The render method must be defined in the Component extending this base class. Skipping `render` definition would
    * render a no op for a custom element.
+   * @param options? additional options for render
    */
-  render: any;
+  abstract render(options?: any): any;
   /**
    * Attaches a shadow root in 'open' mode.
    */
@@ -41,10 +42,13 @@ class PureComponent extends HTMLElement {
   }
   /**
    * flush the render cache to DOM. This method should not be overridden in extended class
+   * @param options additional options to pass to instance's render function
    */
-  flush() {
+  flush(options?) {
     if (this.render) {
-      render(this.render({ state: store.state, dispatch: store.dispatch }), this.root, { eventContext: this });
+      render(this.render({ state: store.state, dispatch: store.dispatch, ...options }), this.root, {
+        eventContext: this
+      });
     }
   }
 }
