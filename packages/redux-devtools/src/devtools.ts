@@ -1,4 +1,4 @@
-import { store } from '@znix/znix';
+import { store } from '@znix/store';
 
 const extension = (window as any).__REDUX_DEVTOOLS_EXTENSION__ || (window.top as any).__REDUX_DEVTOOLS_EXTENSION__;
 

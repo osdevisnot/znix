@@ -7,27 +7,21 @@
   "files": [
     "dist"
   ],
-  "main": "dist/znix.js",
-  "module": "dist/znix.esm.js",
-  "typings": "dist/src/znix.d.ts",
+  "main": "dist/cjs/znix.js",
+  "module": "dist/esm/znix.js",
+  "typings": "dist/znix.d.ts",
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
-    "postbuild": "npm run docs",
-    "coverage": "jest --coverage",
-    "start": "rollup -wc",
-    "test": "jest --watch",
-    "predocs": "rm -rf docs",
-    "docs": "typedoc"
+    "start": "rollup -wc"
   },
   "dependencies": {
-    "lit-html": "0.13.0"
+    "@znix/component": "0.1.9",
+    "@znix/router": "0.1.9",
+    "@znix/store": "0.1.9"
   },
   "devDependencies": {
-    "tslib-cli": "0.0.25"
-  },
-  "peerDependencies": {
-    "lit-html": "0.13.0"
+    "tslib-cli": "0.0.26"
   },
   "publishConfig": {
     "access": "public"

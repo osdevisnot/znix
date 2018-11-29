@@ -1,0 +1,22 @@
+{
+  "name": "@znix/aux",
+  "version": "0.1.9",
+  "private": true,
+  "description": "A javascript micro-framework for Next Generation Web Apps",
+  "license": "MIT",
+  "author": "osdevisnot <osdevisnot@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "rollup -wc",
+    "predeploy": "rollup -c",
+    "deploy": "echo 'pushing to gh-pages'"
+  },
+  "dependencies": {
+    "@znix/znix": "0.1.9"
+  },
+  "devDependencies": {
+    "tslib-cli": "0.0.26"
+  }
+}

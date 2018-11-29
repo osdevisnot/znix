@@ -1,5 +1,5 @@
 {
-  "name": "@znix/redux-devtools",
+  "name": "@znix/store",
   "version": "0.1.9",
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
@@ -7,17 +7,14 @@
   "files": [
     "dist"
   ],
-  "main": "dist/cjs/devtools.js",
-  "module": "dist/esm/devtools.js",
-  "typings": "dist/devtools.d.ts",
+  "main": "dist/cjs/store.js",
+  "module": "dist/esm/store.js",
+  "typings": "dist/store.d.ts",
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "tsc --outDir dist/esm --module es2015",
     "postbuild": "tsc --outDir dist/cjs --module commonjs",
     "start": "tsc --outDir dist/esm --module es2015 --watch"
-  },
-  "dependencies": {
-    "@znix/store": "0.1.9"
   },
   "publishConfig": {
     "access": "public"

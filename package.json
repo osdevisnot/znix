@@ -1,25 +1,28 @@
 {
-  "name": "@znix/znix",
-  "version": "0.1.0",
+  "name": "@znix/znix-monorepo",
+  "version": "0.1.9",
   "private": true,
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
   "scripts": {
-    "preboot": "lerna bootstrap",
-    "boot": "lerna run coverage",
-    "postboot": "lerna run build",
-    "prepub": "npm run setup",
-    "pub": "lerna publish",
+    "preboot": "oao bootstrap",
+    "boot": "oao run-script build --tree",
+    "postboot": "yarn run coverage",
+    "coverage": "jest --coverage",
+    "postcoverage": "typedoc",
+    "prepub": "yarn run setup",
+    "pub": "oao publish",
     "presetup": "git clean -fdX",
-    "setup": "npm install",
-    "postsetup": "npm run boot"
+    "setup": "yarn",
+    "postsetup": "yarn run boot"
   },
   "prettier": {
     "printWidth": 120,
     "singleQuote": true
   },
   "devDependencies": {
-    "lerna": "3.5.0"
+    "oao": "1.5.1",
+    "tslib-cli": "0.0.26"
   }
 }
