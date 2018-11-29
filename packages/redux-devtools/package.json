@@ -1,6 +1,6 @@
 {
   "name": "@znix/redux-devtools",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
   "files": [
@@ -13,7 +13,7 @@
     "start": "rollup -wc"
   },
   "devDependencies": {
-    "@znix/znix": "^0.1.8",
+    "@znix/znix": "^0.1.9",
     "tslib-cli": "0.0.25"
   },
   "peerDependencies": {
