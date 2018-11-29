@@ -20,6 +20,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "lerna": "3.5.0"
+    "lerna": "3.5.1"
   }
 }
