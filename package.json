@@ -13,7 +13,7 @@
     "postcoverage": "typedoc",
     "prepub": "yarn run setup",
     "pub": "oao publish",
-    "postpub": "cd packages/aux && yarn run deploy",
+    "postpub": "cd packages/aux/public && yarn run deploy",
     "presetup": "git clean -fdX",
     "setup": "yarn",
     "postsetup": "yarn run boot"
