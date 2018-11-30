@@ -17,7 +17,7 @@
     "start": "tsc --outDir dist/esm --module es2015 --watch"
   },
   "dependencies": {
-    "@znix/store": "0.1.9"
+    "@znix/store": "*"
   },
   "publishConfig": {
     "access": "public"

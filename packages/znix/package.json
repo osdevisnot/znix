@@ -16,9 +16,9 @@
     "start": "rollup -wc"
   },
   "dependencies": {
-    "@znix/component": "0.1.9",
-    "@znix/router": "0.1.9",
-    "@znix/store": "0.1.9"
+    "@znix/component": "*",
+    "@znix/router": "*",
+    "@znix/store": "*"
   },
   "devDependencies": {
     "tslib-cli": "0.0.26"
