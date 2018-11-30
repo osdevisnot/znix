@@ -1,6 +1,6 @@
 {
   "name": "@znix/component",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
