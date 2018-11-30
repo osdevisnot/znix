@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "predeploy": "rollup -c",
-    "deploy": "surge",
+    "deploy": "cd public && surge",
     "start": "rollup -wc"
   },
   "dependencies": {
