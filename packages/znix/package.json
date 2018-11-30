@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/cjs/znix.js",
+  "main": "dist/znix.js",
   "module": "dist/esm/znix.js",
   "typings": "dist/znix.d.ts",
   "scripts": {

@@ -13,7 +13,7 @@ const parametersPattern = /(:[^\/]+)/g;
  * @param route single route entry
  * @param pathname target location to match towards
  */
-function matchRoute(route, pathname) {
+function routeMatcher(route, pathname) {
   const match = new RegExp(route.path.replace(parametersPattern, '([^/]+)') + (route.exact ? '$' : '(/|$)'));
   const params = (route.path.match(parametersPattern) || []).map(x => x.substring(1));
   const matches = pathname.match(match);
@@ -30,8 +30,8 @@ function matchRoute(route, pathname) {
  * Function to extract the query params from search part of URL
  * @param loc standard location object
  */
-function search(loc) {
-  return loc.search
+function search(search) {
+  return search
     .replace(/^\?/, '')
     .split('&')
     .filter(param => param.length)
@@ -50,9 +50,12 @@ function search(loc) {
 function matchRoutes(routes, loc) {
   let target = loc.pathname.replace(/[.*]+\/$/, ''),
     params;
-  const route = routes.find(r => (params = matchRoute(r, target)));
-  const query = search(loc);
+  const route = routes.find(r => (params = routeMatcher(r, target)));
+  if (!params) {
+    params = {};
+  }
+  const query = search(loc.search || '');
   return { route, params, query };
 }
 
-export { matchRoutes };
+export { matchRoutes, routeMatcher, search };

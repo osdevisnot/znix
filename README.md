@@ -3,19 +3,19 @@
 > A javascript micro-framework for Next Generation Web Apps
 
 [![Build Status](https://travis-ci.org/osdevisnot/znix.svg?branch=master)](https://travis-ci.org/osdevisnot/znix)
-[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.12/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
-[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.12/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
-[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.12/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
+[![The Uncompressed size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.13/dist/znix.min.js?label=Uncompressed%20Size)](https://unpkg.com/@znix/znix)
+[![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.13/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
+[![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.13/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/osdevisnot/znix.svg)](https://greenkeeper.io/)
 
 ## Features
 
-- **Small Footprint** Components with Lifecycle + Built-in Store in < 5 KB
-- **Fast** built with fast & efficient [lit-html](https://github.com/Polymer/lit-html)
+- **Small Footprint** - Components with Lifecycle + Built-in Store in + Router < 5 KB
+- **Fast** - built with [lit-html](https://github.com/Polymer/lit-html) - uses native DOM, no virtual DOM overhead.
 - **Best DX** - **No Build Step** + **Redux devtools integration**
-- **Standard Compliant** Based on Web Components Standard
-- **Familiar** Ideas from Redux like libraries
-- **Convenient** Connected Components without boilerplate
+- **Standard Compliant** - Based on Web Components Standard
+- **Familiar** - Ideas from Redux like libraries
+- **Convenient** - Connected Components without boilerplate
 - **Instantly Productive**
   - `render` gets `state` and `dispatch`
   - Connected Components efficiently **auto update on state changes**
@@ -44,7 +44,7 @@ import { Component, render } from '@znix/znix'
 
 ## API
 
-See the [docs directory](https://github.com/osdevisnot/znix/tree/master/packages/znix/docs)
+See the [docs directory](https://github.com/osdevisnot/znix/tree/master/docs)
 
 ## Contributing
 

@@ -16,7 +16,8 @@
     "postpub": "cd packages/aux/public && yarn run deploy",
     "presetup": "git clean -fdX",
     "setup": "yarn",
-    "postsetup": "yarn run boot"
+    "postsetup": "yarn run boot",
+    "test": "jest --watch"
   },
   "prettier": {
     "printWidth": 120,

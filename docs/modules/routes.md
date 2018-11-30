@@ -10,8 +10,8 @@
 
 ### Functions
 
-* [matchRoute](routes.md#matchroute)
 * [matchRoutes](routes.md#matchroutes)
+* [routeMatcher](routes.md#routematcher)
 * [search](routes.md#search)
 
 ---
@@ -30,24 +30,6 @@ ___
 
 ## Functions
 
-<a id="matchroute"></a>
-
-###  matchRoute
-
-▸ **matchRoute**(route: *`any`*, pathname: *`any`*): `any`
-
-This helper function identifies if a single route matches the targeted location. In addition to identifying a match, it will extract the params from target when a match is found
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| route | `any` |  single route entry |
-| pathname | `any` |  target location to match towards |
-
-**Returns:** `any`
-
-___
 <a id="matchroutes"></a>
 
 ###  matchRoutes
@@ -66,19 +48,37 @@ Match the Route definition to Target. If matched, return the route definition wi
 **Returns:** `object`
 
 ___
-<a id="search"></a>
+<a id="routematcher"></a>
 
-###  search
+###  routeMatcher
 
-▸ **search**(loc: *`any`*): `any`
+▸ **routeMatcher**(route: *`any`*, pathname: *`any`*): `any`
 
-Function to extract the query params from search part of URL
+This helper function identifies if a single route matches the targeted location. In addition to identifying a match, it will extract the params from target when a match is found
 
 **Parameters:**
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| loc | `any` |  standard location object |
+| route | `any` |  single route entry |
+| pathname | `any` |  target location to match towards |
+
+**Returns:** `any`
+
+___
+<a id="search"></a>
+
+###  search
+
+▸ **search**(search: *`any`*): `any`
+
+Function to extract the query params from search part of URL
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| search | `any` |
 
 **Returns:** `any`
 

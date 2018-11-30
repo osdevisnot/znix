@@ -3,6 +3,7 @@
  */
 import { Element, PureComponent, html } from '@znix/component';
 import { matchRoutes } from './routes';
+import { isExternal } from './utils';
 
 /**
  * Super Simple Router for Znix Applications
@@ -39,24 +40,6 @@ abstract class Router extends PureComponent {
     window.removeEventListener('pushState', this.renderRoute);
     window.removeEventListener('popstate', this.renderRoute);
   }
-}
-
-/**
- * Tiny Utility function to extract origin information from given location object
- * @param loc fully formed location object
- */
-function getOrigin(loc) {
-  return loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '');
-}
-
-/**
- * Tiny Utility function to identify if the target URL is external to application
- * @param anchorElement the <a> link to target route
- */
-function isExternal(anchorElement) {
-  // Location.origin and HTMLAnchorElement.origin are not
-  // supported by IE and Safari.
-  return getOrigin(location) !== getOrigin(anchorElement);
 }
 
 /**

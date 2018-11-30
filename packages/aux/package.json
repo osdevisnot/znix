@@ -9,9 +9,9 @@
     "dist"
   ],
   "scripts": {
-    "start": "rollup -wc",
     "predeploy": "rollup -c",
-    "deploy": "surge"
+    "deploy": "surge",
+    "start": "rollup -wc"
   },
   "dependencies": {
     "@znix/znix": "*"
