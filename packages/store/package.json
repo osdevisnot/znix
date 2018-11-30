@@ -1,6 +1,6 @@
 {
   "name": "@znix/store",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
