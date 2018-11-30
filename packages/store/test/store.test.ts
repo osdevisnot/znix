@@ -32,7 +32,7 @@ describe('store', () => {
   });
   it('can override state', () => {
     expect(store.state).toEqual({ count: 20, nz: 30 });
-    store._overrideState({ name: 'new' }, 'devtool');
+    store._override({ name: 'new' }, 'devtool');
     expect(store.state).toEqual({ name: 'new' });
   });
   it('can dispatch action', () => {

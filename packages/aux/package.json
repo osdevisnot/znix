@@ -11,12 +11,12 @@
   "scripts": {
     "start": "rollup -wc",
     "predeploy": "rollup -c",
-    "deploy": "echo 'pushing to gh-pages'"
+    "deploy": "surge"
   },
   "dependencies": {
     "@znix/znix": "*"
   },
   "devDependencies": {
-    "tslib-cli": "0.0.26"
+    "tslib-cli": "0.0.27"
   }
 }

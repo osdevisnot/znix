@@ -79,11 +79,11 @@ ___
 
 Super simple pub/sub, event emitter for Znix applications
 
-<a id="store-1._overridestate"></a>
+<a id="store-1._override"></a>
 
-####  _overrideState
+####  _override
 
-▸ **_overrideState**(state: *`any`*, action: *`any`*): `void`
+▸ **_override**(state: *`any`*, action: *`any`*): `void`
 
 Override current state value (useful for devtools)
 
@@ -103,7 +103,7 @@ ___
 
 ▸ **dispatch**(action: *`any`*, payload?: *`any`*): `any`
 
-Dispatch an action with given payload. If action returns promise, dispatch will resolve after promise resolution
+Dispatch an action with given payload. If action returns promise, dispatch will resolve after promise resolution. Same for async calls...
 
 **Parameters:**
 

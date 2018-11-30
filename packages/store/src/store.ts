@@ -64,13 +64,13 @@ const store = {
    * @param state updated state
    * @param action action triggering state update
    */
-  _overrideState(state, action) {
+  _override(state, action) {
     _state = { ...state };
     emit(_state, action);
   },
   /**
    * Dispatch an action with given payload. If action returns promise, dispatch
-   * will resolve after promise resolution
+   * will resolve after promise resolution. Same for async calls...
    * @param action action name
    * @param payload data for action
    */

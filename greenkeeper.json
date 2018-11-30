@@ -2,10 +2,13 @@
   "groups": {
     "default": {
       "packages": [
-        "examples/00_hello-world/package.json",
-        "examples/01_counter-demo/package.json",
         "package.json",
-        "packages/znix/package.json"
+        "packages/redux-devtools/package.json",
+        "packages/component/package.json",
+        "packages/aux/package.json",
+        "packages/znix/package.json",
+        "packages/store/package.json",
+        "packages/router/package.json"
       ]
     }
   }

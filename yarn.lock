@@ -37,6 +37,11 @@
     reflect-metadata "^0.1.12"
     tslib "^1.8.1"
 
+"@types/clean-css@*":
+  version "3.4.30"
+  resolved "http://registry.npmjs.org/@types/clean-css/-/clean-css-3.4.30.tgz#0052c136f5248002428e3638b37de4a39818641d"
+  integrity sha1-AFLBNvUkgAJCjjY4s33ko5gYZB0=
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
@@ -73,6 +78,15 @@
   resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.3.tgz#b672cfaac25cbbc634a0fd92c515f66faa18dbca"
   integrity sha512-pGF/zvYOACZ/gLGWdQH8zSwteQS1epp68yRcVLJMgUck/MjEn/FBYmPub9pXT8C1e4a8YZfHo1CKyV8q1vKUnQ==
 
+"@types/html-minifier@^3.5.2":
+  version "3.5.2"
+  resolved "http://registry.npmjs.org/@types/html-minifier/-/html-minifier-3.5.2.tgz#f897a13d847a774e9b6fd91497e9b0e0ead71c35"
+  integrity sha512-yikK28/KlVyf8g9i/k+TDFlteLuZ6QQTUdVqvKtzEB+8DSLCTjxfh6IK45KnW4rYFI3Y8T4LWpYJMTmfJleWaQ==
+  dependencies:
+    "@types/clean-css" "*"
+    "@types/relateurl" "*"
+    "@types/uglify-js" "*"
+
 "@types/jest@23.3.10":
   version "23.3.10"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.10.tgz#4897974cc317bf99d4fe6af1efa15957fa9c94de"
@@ -98,6 +112,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.10.tgz#4fa76e6598b7de3f0cb6ec3abacc4f59e5b3a2ce"
   integrity sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
 
+"@types/relateurl@*":
+  version "0.2.28"
+  resolved "http://registry.npmjs.org/@types/relateurl/-/relateurl-0.2.28.tgz#6bda7db8653fa62643f5ee69e9f69c11a392e3a6"
+  integrity sha1-a9p9uGU/piZD9e5p6facEaOS46Y=
+
 "@types/shelljs@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.8.0.tgz#0caa56b68baae4f68f44e0dd666ab30b098e3632"
@@ -105,6 +124,13 @@
   dependencies:
     "@types/glob" "*"
     "@types/node" "*"
+
+"@types/uglify-js@*":
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/@types/uglify-js/-/uglify-js-3.0.4.tgz#96beae23df6f561862a830b4288a49e86baac082"
+  integrity sha512-SudIN9TRJ+v8g5pTG8RRCqfqTMNqgWCKKd3vtynhGzkIIjxaicNAMuY5TRadJ6tzDu3Dotf3ngaMILtmOdmWEQ==
+  dependencies:
+    source-map "^0.6.1"
 
 abab@^2.0.0:
   version "2.0.0"
@@ -1759,7 +1785,7 @@ html-encoding-sniffer@^1.0.2:
   dependencies:
     whatwg-encoding "^1.0.1"
 
-html-minifier@^3.0.2:
+html-minifier@^3.0.2, html-minifier@^3.5.21:
   version "3.5.21"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.21.tgz#d0040e054730e354db008463593194015212d20c"
   integrity sha512-LKUKwuJDhxNa3uf/LPR/KVjm/l3rBqtYeCOAekvG8F1vItxMUpueGd94i/asDDr8/1u7InxzFA5EeGjhhG5mMA==
@@ -2767,7 +2793,7 @@ lru-cache@^4.0.1:
     pseudomap "^1.0.2"
     yallist "^3.0.2"
 
-magic-string@^0.25.1:
+magic-string@^0.25.0, magic-string@^0.25.1:
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.1.tgz#b1c248b399cd7485da0fe7385c2fc7011843266e"
   integrity sha512-sCuTz6pYom8Rlt4ISPFn6wuFodbKMIHUMv4Qko9P17dpxb7s52KJTmRuZZqHdGmLCK9AOcDare039nRIcfdkEg==
@@ -2906,6 +2932,16 @@ mimic-response@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
   integrity sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
+
+minify-html-literals@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/minify-html-literals/-/minify-html-literals-1.1.2.tgz#1005013000ca683b1b98f6448eb5b37637e80b47"
+  integrity sha512-i4RfIz5udrhxf9IM5U/k94Fkp3x6DjruNG8VAfU08X9k5FaxzScn4htz170t3LevFEbV4z9uz47/c/67zV3SLA==
+  dependencies:
+    "@types/html-minifier" "^3.5.2"
+    html-minifier "^3.5.21"
+    magic-string "^0.25.0"
+    parse-literals "^1.1.0"
 
 minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
   version "3.0.4"
@@ -3338,6 +3374,13 @@ parse-json@^2.2.0:
   integrity sha1-9ID0BDTvgHQfhGkJn43qGPVaTck=
   dependencies:
     error-ex "^1.2.0"
+
+parse-literals@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/parse-literals/-/parse-literals-1.1.0.tgz#8fcdca019d97363f313ea365696e0a4322892084"
+  integrity sha512-w6L5JTkEZOprADOy5f++GdIZ5tNo0/7kgh6/kR1FzX27bJ/TzDFmlDtsrCFE0rfDk3Z7J08baDJl1BczGeYCOQ==
+  dependencies:
+    typescript "^2.9.2"
 
 parse-passwd@^1.0.0:
   version "1.0.0"
@@ -3833,6 +3876,14 @@ rollup-plugin-livereload@0.6.0:
   dependencies:
     livereload "^0.6.0"
 
+rollup-plugin-minify-html-literals@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/rollup-plugin-minify-html-literals/-/rollup-plugin-minify-html-literals-1.1.2.tgz#8cf7e173e47caa6cbcaa9315052a0f8f8b7725cf"
+  integrity sha512-TeNwJSrMcx4Mnt33U0QnXXaQ9d2QEIrT1zku/M8sWw7bdZ2tJRTIshhl9Zl2T8rN7H7vlG5z/RIOrewYLwQRRg==
+  dependencies:
+    minify-html-literals "^1.1.2"
+    rollup-pluginutils "^2.3.0"
+
 rollup-plugin-multi-entry@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-multi-entry/-/rollup-plugin-multi-entry-2.0.2.tgz#ab50fbabec62526706492badadd8d59f139e4d58"
@@ -3886,7 +3937,7 @@ rollup-plugin-typescript2@0.18.0:
     rollup-pluginutils "2.3.3"
     tslib "1.9.3"
 
-rollup-pluginutils@2.3.3, rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.1, rollup-pluginutils@^2.3.3:
+rollup-pluginutils@2.3.3, rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.0, rollup-pluginutils@^2.3.1, rollup-pluginutils@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.3.3.tgz#3aad9b1eb3e7fe8262820818840bf091e5ae6794"
   integrity sha512-2XZwja7b6P5q4RZ5FhyX1+f46xi1Z3qBKigLRZ6VTZjwbN0K1IFGMlwm06Uu0Emcre2Z63l77nq/pzn+KxIEoA==
@@ -4559,10 +4610,10 @@ ts-jest@23.10.5:
     semver "^5.5"
     yargs-parser "10.x"
 
-tslib-cli@0.0.26:
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/tslib-cli/-/tslib-cli-0.0.26.tgz#14eaaecefab0b27d6df39e4e1ee9b4232c35d200"
-  integrity sha512-thpQVjLMXZThdCY2eli/woFi4ohRCbTSDljoJWEfVOmCmXl5XDFNWw074Vo7SJ2T04EG1oGHXJDCu3A1cWRepA==
+tslib-cli@0.0.27:
+  version "0.0.27"
+  resolved "https://registry.npmjs.org/tslib-cli/-/tslib-cli-0.0.27.tgz#258231e470b71f3021a102da8eb62a1a4a49aef1"
+  integrity sha512-a5bZReVUHm/MStDBXvXilc5iRAnvsVfwyGAHVJybw15ajslVbl54KCwbVhvos4oDLvllEHucVM1FxV0vOKznNQ==
   dependencies:
     "@types/jest" "23.3.10"
     "@types/node" "10.12.10"
@@ -4573,6 +4624,7 @@ tslib-cli@0.0.26:
     rollup-plugin-html "0.2.1"
     rollup-plugin-json "3.1.0"
     rollup-plugin-livereload "0.6.0"
+    rollup-plugin-minify-html-literals "1.1.2"
     rollup-plugin-multi-entry "2.0.2"
     rollup-plugin-node-resolve "3.4.0"
     rollup-plugin-replace "2.1.0"
@@ -4758,6 +4810,11 @@ typescript@3.1.6, typescript@3.1.x:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.6.tgz#b6543a83cfc8c2befb3f4c8fba6896f5b0c9be68"
   integrity sha512-tDMYfVtvpb96msS1lDX9MEdHrW4yOuZ4Kdc4Him9oU796XldPYF/t2+uKoX0BBa0hXXwDlqYQbXY5Rzjzc5hBA==
+
+typescript@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
+  integrity sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
 
 uglify-js@3.4.x, uglify-js@^3.1.4:
   version "3.4.9"

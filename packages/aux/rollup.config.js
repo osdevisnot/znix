@@ -1,9 +1,13 @@
 const bundles = require('tslib-cli');
 
+const isDev = !!process.env.ROLLUP_WATCH;
+
 export default bundles([
   {
     input: 'src/index.ts',
-    output: { file: 'dist/index.js', format: 'iife' },
-    devServer: true
+    output: { file: 'public/index.js', format: 'iife' },
+    devServer: isDev,
+    minify: !isDev,
+    tsconfigOverride: isDev ? {} : { compilerOptions: { declaration: false } }
   }
 ]);
