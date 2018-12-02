@@ -16,5 +16,5 @@ module.exports = {
   excludePrivate: true,
   // excludeNotExported: true,
   excludeExternals: true,
-  exclude: ['**/test/**/*', '**/dist/**/*', '**/devtools.ts', '**/znix.ts', '**/aux/**/*']
+  exclude: ['**/test/**/*', '**/dist/**/*', '**/devtools.ts', '**/znix.ts', '**/aux/**/*', '**/_website/**/*']
 };

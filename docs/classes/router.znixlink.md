@@ -66,11 +66,11 @@ ___
 
 ###  render
 
-▸ **render**(): `TemplateResult`
+▸ **render**(): `any`
 
 Render a wired a tag with handling for click events
 
-**Returns:** `TemplateResult`
+**Returns:** `any`
 
 ___
 

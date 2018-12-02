@@ -1,0 +1,25 @@
+{
+  "name": "@znix/website",
+  "version": "0.1.13",
+  "private": true,
+  "description": "A javascript micro-framework for Next Generation Web Apps",
+  "license": "MIT",
+  "author": "osdevisnot <osdevisnot@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prestart": "node guides.js",
+    "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "@znix/znix": "*"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.10.3",
+    "showdown": "1.9.0"
+  },
+  "browserslist": [
+    "last 1 chrome version"
+  ]
+}

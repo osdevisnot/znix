@@ -80,7 +80,7 @@ class ZnixLink extends PureComponent {
   /**
    * Render a wired a tag with handling for click events
    */
-  render() {
+  render(): any {
     return html`
       <a href="${this.to}" @click="${this.handleClick}"><slot></slot></a>
     `;
