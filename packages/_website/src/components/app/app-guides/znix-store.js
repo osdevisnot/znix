@@ -1,4 +1,4 @@
-import { PureComponent, html, Element } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix';
 
 class znixStore extends PureComponent {
   render() {

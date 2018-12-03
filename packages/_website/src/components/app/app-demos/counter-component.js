@@ -1,4 +1,4 @@
-import { store, Component, html, Element } from '@znix/znix';
+import { Component, Element, html, store } from '@znix/znix';
 
 const initialState = { count: 0 };
 

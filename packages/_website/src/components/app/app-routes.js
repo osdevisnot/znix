@@ -1,8 +1,8 @@
-import { Router, Element, html } from '@znix/znix';
-import './app-routes/app-landing';
-import './app-guides/getting-started';
+import { Element, html, Router } from '@znix/znix';
 import './app-demos';
 import './app-guides';
+import './app-guides/quick-start';
+import './app-routes/app-landing';
 
 class AppRoutes extends Router {
   routes() {
@@ -18,7 +18,7 @@ class AppRoutes extends Router {
       {
         path: '/starter',
         render: () => html`
-          <getting-started></getting-started>
+          <quick-start></quick-start>
         `
       },
       {

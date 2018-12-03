@@ -1,8 +1,8 @@
 /**
  * @module PureComponent
  */
-import { render, TemplateResult } from 'lit-html';
 import { store } from '@znix/store';
+import { render, TemplateResult } from 'lit-html';
 
 export type IRenderOptions = {
   state: object;

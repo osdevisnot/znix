@@ -1,4 +1,4 @@
-import { PureComponent, html, Element } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix';
 
 class AppNavigation extends PureComponent {
   render() {
@@ -15,7 +15,7 @@ class AppNavigation extends PureComponent {
         <znix-link to="/">Home</znix-link>
       </ul>
       <ul>
-        <znix-link to="/starter">Getting Started</znix-link>
+        <znix-link to="/starter">Quick Start</znix-link>
       </ul>
       <ul>
         <znix-link to="/guides">Documentation</znix-link>

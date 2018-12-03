@@ -1,11 +1,11 @@
-import { PureComponent, html, Element } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix';
 
-class gettingStarted extends PureComponent {
+class quickStart extends PureComponent {
   render() {
     return html`
-      <h3 id="getting-started">Getting Started</h3>
+      <h3 id="quick-start">Quick Start</h3>
 <p>Our first example is a Counter that can be incremented and decremented.</p>
-<pre><code>import { store, Component, html, Element } from '@znix/znix';
+<pre><code>import { Component, Element, html, store } from '@znix/znix';
 
 const initialState = { count: 0 };
 
@@ -32,4 +32,4 @@ Element('counter-component', CounterComponent);</code></pre>
     `
   }
 }
-Element('getting-started', gettingStarted);
+Element('quick-start', quickStart);

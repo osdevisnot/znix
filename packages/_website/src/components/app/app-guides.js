@@ -1,8 +1,8 @@
-import { PureComponent, Element, html } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix';
 import './app-guides/npm-install';
 import './app-guides/znix-components';
-import './app-guides/znix-store';
 import './app-guides/znix-router';
+import './app-guides/znix-store';
 
 class AppGuides extends PureComponent {
   render() {

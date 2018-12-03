@@ -1,6 +1,6 @@
-import { PureComponent, Element, html } from '@znix/znix';
-import './landing-buttons';
+import { Element, html, PureComponent } from '@znix/znix';
 import './app-features';
+import './landing-buttons';
 class AppLanding extends PureComponent {
   render() {
     return html`

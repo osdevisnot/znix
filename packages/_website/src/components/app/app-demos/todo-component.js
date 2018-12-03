@@ -1,4 +1,4 @@
-import { Component, PureComponent, html, Element, store } from '@znix/znix';
+import { Component, Element, html, PureComponent, store } from '@znix/znix';
 
 const FILTERS = { all: 0, active: 1, completed: 2 };
 

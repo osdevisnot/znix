@@ -1,8 +1,8 @@
 /**
  * @module Component
  */
-import { PureComponent } from './pure-component';
 import { store } from '@znix/store';
+import { PureComponent } from './pure-component';
 
 /**
  * Connected Component for Znix Applications

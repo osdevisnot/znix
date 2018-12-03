@@ -1,21 +1,28 @@
-import { PureComponent, Element, html } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix';
 
 class AppFeatures extends PureComponent {
   constructor() {
     super();
     this.features = [
       {
-        title: 'Fast',
-        description:
-          'Zenix is powered by lit-html, which efficiently renders templates to DOM, including efficiently updating the DOM with new values.'
+        title: 'Lightweight',
+        description: html`
+          <strong>< 5KB</strong> (min + gzip), incliding components, store and a router.
+        `
       },
       {
-        title: 'Lightweight',
-        description:
-          'In < 5KB, you get components with lifecycle methods, a store to manage application state and a router to manage application navigation'
+        title: 'Fast',
+        description: html`
+          Powered by <a href="https://github.com/Polymer/lit-html">lit-html</a>, which efficiently renders and
+          re-renders templates to DOM.
+        `
       },
-      { title: 'Web Components Standard', description: 'Zenix is based on Web Components standards.' },
-      { title: 'Instantly Productive', description: 'Zenix has strong focus on DX.' }
+      { title: 'Future Proof', description: 'Based on Web Components standards. No more Framework fatigue' },
+      // { title: 'Simple', description: 'Tiny API and Familier Concepts.' },
+      {
+        title: 'Instantly Productive',
+        description: 'Be instantly productive with Refresh Workflow and optional Typescript support.'
+      }
     ];
   }
 

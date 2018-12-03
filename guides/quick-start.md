@@ -1,9 +1,9 @@
-### Getting Started
+### Quick Start
 
 Our first example is a Counter that can be incremented and decremented.
 
 ```
-import { store, Component, html, Element } from '@znix/znix';
+import { Component, Element, html, store } from '@znix/znix';
 
 const initialState = { count: 0 };
 
@@ -17,15 +17,13 @@ store.register(initialState, actions);
 
 class CounterComponent extends Component {
   render({ state, dispatch }) {
-    return html\`
-      <h3>Counter: \${state.count}</h3>
-      <button @click="\${e => dispatch('up')}">+</button>
-      <button @click="\${e => dispatch('down')}">-</button>
-      <button @click="\${e => dispatch('upBy', 10)}">+10</button>
-    \`;
+    return html`
+      <h3>Counter: ${state.count}</h3>
+      <button @click="${e => dispatch('up')}">+</button>
+      <button @click="${e => dispatch('down')}">-</button>
+      <button @click="${e => dispatch('upBy', 10)}">+10</button>
+    `;
   }
 }
 Element('counter-component', CounterComponent);
 ```
-
-We start off by declaring initial state.

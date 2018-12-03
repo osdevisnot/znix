@@ -1,7 +1,7 @@
 /**
  * @module Router
  */
-import { Element, PureComponent, html, TemplateResult, IRenderOptions } from '@znix/component';
+import { Element, html, IRenderOptions, PureComponent, TemplateResult } from '@znix/component';
 import { matchRoutes } from './routes';
 import { isExternal } from './utils';
 

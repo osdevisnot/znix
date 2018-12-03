@@ -1,4 +1,4 @@
-import { html, Router, Element } from '@znix/znix';
+import { Element, html, Router } from '@znix/znix';
 
 class DemoRoutes extends Router {
   routes() {

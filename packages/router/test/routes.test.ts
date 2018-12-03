@@ -1,4 +1,4 @@
-import { search, routeMatcher, matchRoutes } from '../src/routes';
+import { matchRoutes, routeMatcher, search } from '../src/routes';
 
 describe('routes', () => {
   let routes: any, mocks: any;

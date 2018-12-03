@@ -2,7 +2,7 @@
  * @module Routes
  */
 
-import { TemplateResult, IRenderOptions } from '@znix/component';
+import { IRenderOptions, TemplateResult } from '@znix/component';
 
 export type IRoute = {
   path: string;
