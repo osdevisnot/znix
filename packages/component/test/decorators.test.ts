@@ -2,7 +2,7 @@ import { Element } from '../src/decorators';
 
 describe('decorators', () => {
   describe('Element', () => {
-    let mock;
+    let mock: any;
     beforeEach(() => {
       mock = jest.fn();
     });

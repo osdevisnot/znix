@@ -1,8 +1,17 @@
 /**
  * @module PureComponent
  */
-import { render } from 'lit-html';
+import { render, TemplateResult } from 'lit-html';
 import { store } from '@znix/store';
+
+export type IRenderOptions = {
+  state: object;
+  dispatch: Function;
+};
+export type IRenderAdditionalOptions = {
+  [index: string]: any;
+};
+
 /**
  * Base class for Znix Components
  * @noInheritDoc
@@ -18,7 +27,7 @@ abstract class PureComponent extends HTMLElement {
    * render a no op for a custom element.
    * @param options? additional options for render
    */
-  abstract render(options?: any): any;
+  abstract render(options?: IRenderOptions): TemplateResult;
   /**
    * Attaches a shadow root in 'open' mode.
    */
@@ -44,7 +53,7 @@ abstract class PureComponent extends HTMLElement {
    * flush the render cache to DOM. This method should not be overridden in extended class
    * @param options additional options to pass to instance's render function
    */
-  flush(options?) {
+  flush(options?: IRenderAdditionalOptions) {
     if (this.render) {
       render(this.render({ state: store.state, dispatch: store.dispatch, ...options }), this.root, {
         eventContext: this

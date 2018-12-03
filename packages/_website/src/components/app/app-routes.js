@@ -1,6 +1,6 @@
 import { Router, Element, html } from '@znix/znix';
 import './app-routes/app-landing';
-import './app-starter';
+import './app-guides/getting-started';
 import './app-demos';
 import './app-guides';
 

@@ -102,7 +102,7 @@ ___
 
 ###  flush
 
-▸ **flush**(options?: *`any`*): `void`
+▸ **flush**(options?: *[IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions)*): `void`
 
 flush the render cache to DOM. This method should not be overridden in extended class
 
@@ -110,7 +110,7 @@ flush the render cache to DOM. This method should not be overridden in extended 
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| `Optional` options | `any` |  additional options to pass to instance's render function |
+| `Optional` options | [IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions) |  additional options to pass to instance's render function |
 
 **Returns:** `void`
 
@@ -119,7 +119,7 @@ ___
 
 ### `<Abstract>` render
 
-▸ **render**(options?: *`any`*): `any`
+▸ **render**(options?: *[IRenderOptions](../modules/purecomponent.md#irenderoptions)*): `TemplateResult`
 
 The render method must be defined in the Component extending this base class. Skipping `render` definition would render a no op for a custom element.
 
@@ -127,9 +127,9 @@ The render method must be defined in the Component extending this base class. Sk
 
 | Name | Type |
 | ------ | ------ |
-| `Optional` options | `any` |
+| `Optional` options | [IRenderOptions](../modules/purecomponent.md#irenderoptions) |
 
-**Returns:** `any`
+**Returns:** `TemplateResult`
 
 ___
 

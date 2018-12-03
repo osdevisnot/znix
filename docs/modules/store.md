@@ -4,6 +4,11 @@
 
 ## Index
 
+### Type aliases
+
+* [IActionHandler](store.md#iactionhandler)
+* [IEventHandler](store.md#ieventhandler)
+
 ### Variables
 
 * [_actions](store.md#_actions)
@@ -20,31 +25,68 @@
 
 ---
 
+## Type aliases
+
+<a id="iactionhandler"></a>
+
+###  IActionHandler
+
+**Ƭ IActionHandler**: *`function`*
+
+#### Type declaration
+▸(state: *`any`*, payload?: *`any`*): `any`
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| state | `any` |
+| `Optional` payload | `any` |
+
+**Returns:** `any`
+
+___
+<a id="ieventhandler"></a>
+
+###  IEventHandler
+
+**Ƭ IEventHandler**: *`function`*
+
+#### Type declaration
+▸(state: *`any`*, action: *`string`*): `void`
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| state | `any` |
+| action | `string` |
+
+**Returns:** `void`
+
+___
+
 ## Variables
 
 <a id="_actions"></a>
 
 ### `<Let>` _actions
 
-**● _actions**: *`object`*
-
-#### Type declaration
+**● _actions**: *`Record`<`string`, [IActionHandler](store.md#iactionhandler)>*
 
 ___
 <a id="_listeners"></a>
 
 ### `<Let>` _listeners
 
-**● _listeners**: *`any`[]* =  []
+**● _listeners**: *`Array`<[IEventHandler](store.md#ieventhandler)>* =  []
 
 ___
 <a id="_state"></a>
 
 ### `<Let>` _state
 
-**● _state**: *`object`*
-
-#### Type declaration
+**● _state**: *`any`*
 
 ___
 
@@ -54,7 +96,7 @@ ___
 
 ###  emit
 
-▸ **emit**(state: *`any`*, action: *`any`*): `void`
+▸ **emit**(state: *`any`*, action: *`string`*): `void`
 
 emit an event @internal
 
@@ -63,7 +105,7 @@ emit an event @internal
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | state | `any` |  Current store state |
-| action | `any` |  name of action |
+| action | `string` |  name of action |
 
 **Returns:** `void`
 
@@ -83,7 +125,7 @@ Super simple pub/sub, event emitter for Znix applications
 
 ####  _override
 
-▸ **_override**(state: *`any`*, action: *`any`*): `void`
+▸ **_override**(state: *`any`*, action: *`string`*): `void`
 
 Override current state value (useful for devtools)
 
@@ -92,7 +134,7 @@ Override current state value (useful for devtools)
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | state | `any` |  updated state |
-| action | `any` |  action triggering state update |
+| action | `string` |  action triggering state update |
 
 **Returns:** `void`
 
@@ -101,7 +143,7 @@ ___
 
 ####  dispatch
 
-▸ **dispatch**(action: *`any`*, payload?: *`any`*): `any`
+▸ **dispatch**(action: *`string`*, payload?: *`any`*): `void`
 
 Dispatch an action with given payload. If action returns promise, dispatch will resolve after promise resolution. Same for async calls...
 
@@ -109,17 +151,17 @@ Dispatch an action with given payload. If action returns promise, dispatch will 
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| action | `any` |  action name |
+| action | `string` |  action name |
 | `Optional` payload | `any` |  data for action |
 
-**Returns:** `any`
+**Returns:** `void`
 
 ___
 <a id="store-1.off"></a>
 
 ####  off
 
-▸ **off**(handler: *`any`*): `void`
+▸ **off**(handler: *[IEventHandler](store.md#ieventhandler)*): `void`
 
 Unsubscribe from store updates
 
@@ -127,7 +169,7 @@ Unsubscribe from store updates
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| handler | `any` |  an event handler |
+| handler | [IEventHandler](store.md#ieventhandler) |  an event handler |
 
 **Returns:** `void`
 
@@ -136,7 +178,7 @@ ___
 
 ####  on
 
-▸ **on**(handler: *`any`*): `any`
+▸ **on**(handler: *[IEventHandler](store.md#ieventhandler)*): `Function`
 
 Subscribe to store updates
 
@@ -144,16 +186,16 @@ Subscribe to store updates
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| handler | `any` |  an event handler |
+| handler | [IEventHandler](store.md#ieventhandler) |  an event handler |
 
-**Returns:** `any`
+**Returns:** `Function`
 
 ___
 <a id="store-1.register"></a>
 
 ####  register
 
-▸ **register**(state: *`any`*, actions?: *`any`*): `void`
+▸ **register**(state: *`any`*, actions?: *`Record`<`string`, [IActionHandler](store.md#iactionhandler)>*): `void`
 
 Register initial state and actions with store
 
@@ -162,7 +204,7 @@ Register initial state and actions with store
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | state | `any` |  initial state |
-| `Optional` actions | `any` |  list of actions |
+| `Optional` actions | `Record`<`string`, [IActionHandler](store.md#iactionhandler)> |  list of actions |
 
 **Returns:** `void`
 
@@ -171,7 +213,7 @@ ___
 
 ####  setState
 
-▸ **setState**(state: *`any`*, action: *`any`*): `void`
+▸ **setState**(state: *`any`*, action: *`string`*): `void`
 
 Set state and call store listeners
 
@@ -180,7 +222,7 @@ Set state and call store listeners
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | state | `any` |  updated state |
-| action | `any` |  action triggering state update |
+| action | `string` |  action triggering state update |
 
 **Returns:** `void`
 
@@ -189,11 +231,11 @@ ___
 
 ####  state
 
-getstate(): `object`
+getstate(): `any`
 
 Get Current State from store
 
-**Returns:** `object`
+**Returns:** `any`
 
 ___
 

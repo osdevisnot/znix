@@ -4,6 +4,11 @@
 
 ## Index
 
+### Type aliases
+
+* [IRoute](routes.md#iroute)
+* [IRouteParams](routes.md#irouteparams)
+
 ### Variables
 
 * [parametersPattern](routes.md#parameterspattern)
@@ -15,6 +20,44 @@
 * [search](routes.md#search)
 
 ---
+
+## Type aliases
+
+<a id="iroute"></a>
+
+###  IRoute
+
+**Ƭ IRoute**: *`object`*
+
+#### Type declaration
+
+`Optional`  exact:  `undefined` &#124; `false` &#124; `true`
+
+ path: `string`
+
+ render : function
+▸ **render**(options?: *[IRenderOptions](purecomponent.md#irenderoptions)*): `TemplateResult`
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` options | [IRenderOptions](purecomponent.md#irenderoptions) |
+
+**Returns:** `TemplateResult`
+
+___
+<a id="irouteparams"></a>
+
+###  IRouteParams
+
+**Ƭ IRouteParams**: *`object`*
+
+#### Type declaration
+
+[index: `string`]: `any`
+
+___
 
 ## Variables
 
@@ -34,7 +77,7 @@ ___
 
 ###  matchRoutes
 
-▸ **matchRoutes**(routes: *`any`*, loc: *`any`*): `object`
+▸ **matchRoutes**(routes: *[[IRoute](routes.md#iroute)]*, loc: *`Location`*): `object`
 
 Match the Route definition to Target. If matched, return the route definition with route params and query params
 
@@ -42,8 +85,8 @@ Match the Route definition to Target. If matched, return the route definition wi
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| routes | `any` |  Routes Definition |
-| loc | `any` |  Target Location |
+| routes | [[IRoute](routes.md#iroute)] |  Routes Definition |
+| loc | `Location` |  Target Location |
 
 **Returns:** `object`
 
@@ -52,7 +95,7 @@ ___
 
 ###  routeMatcher
 
-▸ **routeMatcher**(route: *`any`*, pathname: *`any`*): `any`
+▸ **routeMatcher**(route: *[IRoute](routes.md#iroute)*, pathname: *`string`*): `any`
 
 This helper function identifies if a single route matches the targeted location. In addition to identifying a match, it will extract the params from target when a match is found
 
@@ -60,8 +103,8 @@ This helper function identifies if a single route matches the targeted location.
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| route | `any` |  single route entry |
-| pathname | `any` |  target location to match towards |
+| route | [IRoute](routes.md#iroute) |  single route entry |
+| pathname | `string` |  target location to match towards |
 
 **Returns:** `any`
 
@@ -70,7 +113,7 @@ ___
 
 ###  search
 
-▸ **search**(search: *`any`*): `any`
+▸ **search**(search: *`string`*): `object`
 
 Function to extract the query params from search part of URL
 
@@ -78,9 +121,9 @@ Function to extract the query params from search part of URL
 
 | Name | Type |
 | ------ | ------ |
-| search | `any` |
+| search | `string` |
 
-**Returns:** `any`
+**Returns:** `object`
 
 ___
 

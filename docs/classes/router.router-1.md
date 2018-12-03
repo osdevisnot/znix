@@ -49,9 +49,15 @@ ___
 
 ###  render
 
-▸ **render**(): `void`
+▸ **render**(options?: *[IRenderOptions](../modules/purecomponent.md#irenderoptions)*): `TemplateResult`
 
-**Returns:** `void`
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` options | [IRenderOptions](../modules/purecomponent.md#irenderoptions) |
+
+**Returns:** `TemplateResult`
 
 ___
 <a id="routes"></a>

@@ -2,6 +2,18 @@
  * @module Routes
  */
 
+import { TemplateResult, IRenderOptions } from '@znix/component';
+
+export type IRoute = {
+  path: string;
+  exact?: boolean;
+  render(options?: IRenderOptions): TemplateResult;
+};
+
+export type IRouteParams = {
+  [index: string]: any;
+};
+
 /**
  * Regex to match the path parameters
  */
@@ -13,14 +25,14 @@ const parametersPattern = /(:[^\/]+)/g;
  * @param route single route entry
  * @param pathname target location to match towards
  */
-function routeMatcher(route, pathname) {
+function routeMatcher(route: IRoute, pathname: string): any {
   const match = new RegExp(route.path.replace(parametersPattern, '([^/]+)') + (route.exact ? '$' : '(/|$)'));
   const params = (route.path.match(parametersPattern) || []).map(x => x.substring(1));
   const matches = pathname.match(match);
   if (!matches) {
     return false;
   }
-  return params.reduce((acc, param, idx) => {
+  return params.reduce((acc: any, param, idx) => {
     acc[param] = decodeURIComponent(matches[idx + 1]);
     return acc;
   }, {});
@@ -30,12 +42,12 @@ function routeMatcher(route, pathname) {
  * Function to extract the query params from search part of URL
  * @param loc standard location object
  */
-function search(search) {
+function search(search: string): object {
   return search
     .replace(/^\?/, '')
     .split('&')
     .filter(param => param.length)
-    .reduce((acc, part) => {
+    .reduce((acc: any, part) => {
       const [key, value] = part.split('=');
       acc[decodeURIComponent(key)] = value ? decodeURIComponent(value) : null;
       return acc;
@@ -47,14 +59,14 @@ function search(search) {
  * @param routes Routes Definition
  * @param loc Target Location
  */
-function matchRoutes(routes, loc) {
+function matchRoutes(routes: [IRoute], loc: Location) {
   let target = loc.pathname.replace(/[.*]+\/$/, ''),
     params;
-  const route = routes.find(r => (params = routeMatcher(r, target)));
+  const route: IRoute | undefined = routes.find(r => (params = routeMatcher(r, target)));
   if (!params) {
     params = {};
   }
-  const query = search(loc.search || '');
+  const query: object = search(loc.search || '');
   return { route, params, query };
 }
 

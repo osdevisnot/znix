@@ -17,7 +17,7 @@
 
 ###  getOrigin
 
-▸ **getOrigin**(loc: *`any`*): `string`
+▸ **getOrigin**(loc: *`Location`*): `string`
 
 Tiny Utility function to extract origin information from given location object
 
@@ -25,7 +25,7 @@ Tiny Utility function to extract origin information from given location object
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| loc | `any` |  fully formed location object |
+| loc | `Location` |  fully formed location object |
 
 **Returns:** `string`
 
@@ -34,7 +34,7 @@ ___
 
 ###  isExternal
 
-▸ **isExternal**(anchorElement: *`any`*): `boolean`
+▸ **isExternal**(anchorElement: *`Location`*): `boolean`
 
 Tiny Utility function to identify if the target URL is external to application
 
@@ -42,7 +42,7 @@ Tiny Utility function to identify if the target URL is external to application
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| anchorElement | `any` |  the <a> link to target route |
+| anchorElement | `Location` |  the <a> link to target route |
 
 **Returns:** `boolean`
 

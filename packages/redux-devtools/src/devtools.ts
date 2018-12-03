@@ -9,7 +9,7 @@ if (!extension) {
 }
 if (!(store as any).devtools) {
   (store as any).devtools = extension.connect();
-  (store as any).devtools.subscribe(message => {
+  (store as any).devtools.subscribe((message: any) => {
     if (message.type === 'DISPATCH' && message.state) {
       ignore = message.payload.type === 'JUMP_TO_ACTION' || message.payload.type === 'JUMP_TO_STATE';
       store._override(JSON.parse(message.state), message.payload.type);

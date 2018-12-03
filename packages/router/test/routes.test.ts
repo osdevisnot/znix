@@ -1,7 +1,7 @@
 import { search, routeMatcher, matchRoutes } from '../src/routes';
 
 describe('routes', () => {
-  let routes, mocks;
+  let routes: any, mocks: any;
   beforeEach(() => {
     mocks = {
       home: jest.fn(),
@@ -52,7 +52,7 @@ describe('routes', () => {
     it('wont match incorrect paths', () => {
       const badPaths = ['/about', '/profiles', '/'];
       badPaths.forEach(path => {
-        routes.forEach(route => {
+        routes.forEach((route: any) => {
           const ret = routeMatcher(route, path);
           expect(ret).toBeFalsy();
         });
@@ -61,7 +61,7 @@ describe('routes', () => {
   });
   describe('.matchRoutes()', () => {
     it('finds simple match', () => {
-      const location = {
+      const location: any = {
         pathname: '/home'
       };
       const ret = matchRoutes(routes, location);
@@ -69,7 +69,7 @@ describe('routes', () => {
       expect(ret).toEqual({ route: routes[0], query: {}, params: {} });
     });
     it('finds match with exact', () => {
-      const location = {
+      const location: any = {
         pathname: '/profile'
       };
       const ret = matchRoutes(routes, location);
@@ -77,7 +77,7 @@ describe('routes', () => {
       expect(ret).toEqual({ route: routes[1], query: {}, params: {} });
     });
     it('finds correct params and queries', () => {
-      const location = {
+      const location: any = {
         pathname: '/profile/1234',
         search: '?abc=def'
       };
@@ -96,7 +96,7 @@ describe('routes', () => {
         { pathname: 'home' }, // missing first slash
         { pathname: '/homey' } // bad spelling
       ];
-      locations.forEach(location => {
+      locations.forEach((location: any) => {
         const ret = matchRoutes(routes, location);
         expect(ret).toEqual({ route: undefined, query: {}, params: {} });
       });

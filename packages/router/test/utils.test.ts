@@ -3,7 +3,7 @@ import { getOrigin, isExternal } from '../src/utils';
 describe('utils', () => {
   describe('.getOrigin()', () => {
     it('returns fully formed url', () => {
-      const loc = {
+      const loc: any = {
         protocol: 'http:',
         hostname: 'localhost'
       };
@@ -12,7 +12,7 @@ describe('utils', () => {
       expect(origin).toEqual('http://localhost');
     });
     it('identifies and joins ports', () => {
-      const loc = {
+      const loc: any = {
         protocol: 'https:',
         hostname: 'abc.com',
         port: 441
@@ -29,7 +29,7 @@ describe('utils', () => {
         hostname: 'abc.com',
         port: 441
       };
-      const link = {
+      const link: any = {
         protocol: 'https:',
         hostname: 'abc.com',
         port: 441
@@ -43,7 +43,7 @@ describe('utils', () => {
         hostname: 'abc.com',
         port: 441
       };
-      const links = [
+      const links: any = [
         // https is not same as http
         { protocol: 'http:', hostname: 'abc.com', port: 441 },
         // different host
@@ -51,7 +51,7 @@ describe('utils', () => {
         // different port
         { protocol: 'https:', hostname: 'abc.com', port: 8080 }
       ];
-      links.forEach(link => {
+      links.forEach((link: any) => {
         const match = isExternal(link);
         expect(match).toBeTruthy();
       });

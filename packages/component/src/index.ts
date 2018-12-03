@@ -1,4 +1,4 @@
-export { render, html } from 'lit-html';
+export { render, html, TemplateResult } from 'lit-html';
 export { Element } from './decorators';
-export { PureComponent } from './pure-component';
+export { PureComponent, IRenderOptions, IRenderAdditionalOptions } from './pure-component';
 export { Component } from './component';

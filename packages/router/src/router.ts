@@ -1,7 +1,7 @@
 /**
  * @module Router
  */
-import { Element, PureComponent, html } from '@znix/component';
+import { Element, PureComponent, html, TemplateResult, IRenderOptions } from '@znix/component';
 import { matchRoutes } from './routes';
 import { isExternal } from './utils';
 
@@ -14,7 +14,9 @@ abstract class Router extends PureComponent {
    * Dynamic definition of routes
    */
   abstract routes(): any;
-  render() {}
+  render(options?: IRenderOptions): TemplateResult {
+    return html``;
+  }
   /**
    * A private method to effectively render and re-render a route from routes definition
    */
@@ -57,7 +59,7 @@ class ZnixLink extends PureComponent {
    */
   target = this.getAttribute('target');
 
-  handleClick = (event: any) => {
+  clx = (event: any) => {
     // call the original click first
     if (
       event.defaultPrevented ||
@@ -80,9 +82,9 @@ class ZnixLink extends PureComponent {
   /**
    * Render a wired a tag with handling for click events
    */
-  render(): any {
+  render() {
     return html`
-      <a href="${this.to}" @click="${this.handleClick}"><slot></slot></a>
+      <a href="${this.to}" @click="${this.clx}"><slot></slot></a>
     `;
   }
 }

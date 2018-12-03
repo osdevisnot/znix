@@ -1,9 +1,9 @@
 import { store } from '../src/store';
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+const sleep = (ms: any) => new Promise(r => setTimeout(r, ms));
 
 describe('store', () => {
-  let fn, fn2;
+  let fn: any, fn2: any;
   beforeEach(() => {
     fn = jest.fn();
     fn2 = jest.fn();
@@ -32,20 +32,20 @@ describe('store', () => {
   });
   it('can override state', () => {
     expect(store.state).toEqual({ count: 20, nz: 30 });
-    store._override({ name: 'new' }, 'devtool');
+    store._override({ name: 'new' }, 'any');
     expect(store.state).toEqual({ name: 'new' });
   });
   it('can dispatch action', () => {
     store.register(
       { count: 10 },
       {
-        up: ({ state, payload }) => ({ count: state.count + 1 })
+        up: ({ state, payload }: { state: any; payload: any }) => ({ count: state.count + 1 })
       }
     );
     store.dispatch('up');
     expect(store.state).toEqual({ count: 11, name: 'new' });
   });
-  it('stops calling listeners if unsubsctibed', () => {
+  it('stops calling listeners if unsubscribed', () => {
     const handler = store.on(fn2);
     store.dispatch('up');
     expect(fn2).toHaveBeenCalledTimes(1);
@@ -60,7 +60,7 @@ describe('store', () => {
         count: 10
       },
       {
-        downBy: ({ state, payload }) => ({ count: state.count - payload })
+        downBy: ({ state, payload }: { state: any; payload: any }) => ({ count: state.count - payload })
       }
     );
     store.dispatch('downBy', 5);
@@ -70,7 +70,7 @@ describe('store', () => {
     store.register(
       {},
       {
-        fetch: ({ state, payload }) => {
+        fetch: ({ state, payload }: { state: any; payload: any }) => {
           return new Promise((resolve, reject) => {
             process.nextTick(() => {
               resolve({ name: 'async' });
