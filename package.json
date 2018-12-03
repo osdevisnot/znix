@@ -1,6 +1,6 @@
 {
   "name": "@znix/znix-monorepo",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": true,
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
