@@ -6,25 +6,27 @@
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
   "scripts": {
-    "preboot": "oao bootstrap",
-    "boot": "oao run-script build --tree",
-    "postboot": "yarn run coverage",
+    "preboot": "lerna bootstrap",
+    "boot": "lerna run build",
+    "postboot": "npm run coverage",
     "coverage": "jest --coverage",
     "postcoverage": "typedoc",
-    "prepub": "yarn run setup",
-    "pub": "oao publish",
-    "postpub": "cd packages/aux && yarn run deploy",
+    "prepub": "npm run setup",
+    "pub": "lerna publish",
+    "postpub": "cd examples/aux && npm run deploy",
     "presetup": "git clean -fdX",
-    "setup": "yarn",
-    "postsetup": "yarn run boot",
-    "test": "jest --watch"
+    "setup": "npm install",
+    "postsetup": "npm run boot",
+    "test": "jest --watch",
+    "updates": "ncu",
+    "postupdates": "lerna exec 'ncu'"
   },
   "prettier": {
     "printWidth": 120,
     "singleQuote": true
   },
   "devDependencies": {
-    "oao": "1.5.1",
+    "lerna": "3.6.0",
     "tslib-cli": "0.0.27"
   }
 }
