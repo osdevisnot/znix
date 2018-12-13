@@ -1,4 +1,4 @@
-import { PureComponent, Element, html, Router, store } from '@znix/znix';
+import { PureComponent, Element, html } from '@znix/znix';
 
 import './components/home-component';
 import './components/about-component';

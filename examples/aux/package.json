@@ -1,6 +1,6 @@
 {
   "name": "@znix/aux",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": true,
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "start": "rollup -wc"
   },
   "dependencies": {
-    "@znix/znix": "*"
+    "@znix/znix": "0.1.15"
   },
   "devDependencies": {
     "tslib-cli": "0.0.27"
