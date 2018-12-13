@@ -7,6 +7,7 @@
 [![The GZIP size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.15/dist/znix.min.js?compression=gzip&label=GZIP%20Size)](https://unpkg.com/@znix/znix)
 [![The Brotli size of znix](http://img.badgesize.io/https://unpkg.com/@znix/znix@0.1.15/dist/znix.min.js?compression=brotli&label=Brotli%20Size)](https://unpkg.com/@znix/znix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/osdevisnot/znix.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fosdevisnot%2Fznix.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fosdevisnot%2Fznix?ref=badge_shield)
 
 ## Features
 
@@ -85,3 +86,6 @@ This library was inspired by many of the pre-existing libraries/packages for exi
 ## License
 
 [MIT License](https://oss.ninja/mit/osdevisnot) @ [osdevisnot](https://github.com/osdevisnot)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fosdevisnot%2Fznix.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fosdevisnot%2Fznix?ref=badge_large)
