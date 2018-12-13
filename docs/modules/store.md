@@ -53,7 +53,7 @@ ___
 **Ƭ IEventHandler**: *`function`*
 
 #### Type declaration
-▸(state: *`any`*, action: *`string`*): `void`
+▸(state: *`any`*, action: *`string`*): `any`
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 | state | `any` |
 | action | `string` |
 
-**Returns:** `void`
+**Returns:** `any`
 
 ___
 
@@ -98,8 +98,6 @@ ___
 
 ▸ **emit**(state: *`any`*, action: *`string`*): `void`
 
-emit an event @internal
-
 **Parameters:**
 
 | Name | Type | Description |
@@ -121,13 +119,11 @@ ___
 
 Super simple pub/sub, event emitter for Znix applications
 
-<a id="store-1._override"></a>
+<a id="store-1._o"></a>
 
-####  _override
+####  $o
 
-▸ **_override**(state: *`any`*, action: *`string`*): `void`
-
-Override current state value (useful for devtools)
+▸ **$o**(state: *`any`*, action: *`string`*): `void`
 
 **Parameters:**
 
@@ -143,7 +139,7 @@ ___
 
 ####  dispatch
 
-▸ **dispatch**(action: *`string`*, payload?: *`any`*): `void`
+▸ **dispatch**(action: *`string`*, payload?: *`any`*): `any`
 
 Dispatch an action with given payload. If action returns promise, dispatch will resolve after promise resolution. Same for async calls...
 
@@ -154,7 +150,7 @@ Dispatch an action with given payload. If action returns promise, dispatch will 
 | action | `string` |  action name |
 | `Optional` payload | `any` |  data for action |
 
-**Returns:** `void`
+**Returns:** `any`
 
 ___
 <a id="store-1.off"></a>

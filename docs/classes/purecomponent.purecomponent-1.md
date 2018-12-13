@@ -20,14 +20,14 @@ Base class for Znix Components
 
 ### Properties
 
-* [root](purecomponent.purecomponent-1.md#root)
+* [$r](purecomponent.purecomponent-1.md#_r)
 * [HTMLElement](purecomponent.purecomponent-1.md#htmlelement)
 
 ### Methods
 
+* [$f](purecomponent.purecomponent-1.md#_f)
 * [attributeChangedCallback](purecomponent.purecomponent-1.md#attributechangedcallback)
 * [connectedCallback](purecomponent.purecomponent-1.md#connectedcallback)
-* [flush](purecomponent.purecomponent-1.md#flush)
 * [render](purecomponent.purecomponent-1.md#render)
 
 ---
@@ -48,11 +48,11 @@ ___
 
 ## Properties
 
-<a id="root"></a>
+<a id="_r"></a>
 
-###  root
+###  $r
 
-**● root**: *`ShadowRoot`*
+**● $r**: *`ShadowRoot`*
 
 The root node of Shadow DOM. Often referred as Shadow Root. Once the custom element is mounted, this can be accessed using `container.shadowRoot.querySelector('#selector')`
 
@@ -76,6 +76,23 @@ ___
 
 ## Methods
 
+<a id="_f"></a>
+
+### `<Protected>` $f
+
+▸ **$f**(options?: *[IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions)*): `Promise`<`void`>
+
+flush the render cache to DOM. This method should not be overridden in extended class
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `Optional` options | [IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions) |  additional options to pass to instance's render function |
+
+**Returns:** `Promise`<`void`>
+
+___
 <a id="attributechangedcallback"></a>
 
 ###  attributeChangedCallback
@@ -94,23 +111,6 @@ ___
 ▸ **connectedCallback**(): `void`
 
 Invoked each time the custom element is appended into a document-connected element. This will happen each time the node is moved, and may happen before the element's contents have been fully parsed.
-
-**Returns:** `void`
-
-___
-<a id="flush"></a>
-
-###  flush
-
-▸ **flush**(options?: *[IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions)*): `void`
-
-flush the render cache to DOM. This method should not be overridden in extended class
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| `Optional` options | [IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions) |  additional options to pass to instance's render function |
 
 **Returns:** `void`
 

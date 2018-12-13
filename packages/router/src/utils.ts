@@ -3,7 +3,7 @@
  * @param loc fully formed location object
  */
 function getOrigin(loc: Location) {
-  return loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '');
+  return loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '')
 }
 
 /**
@@ -13,7 +13,7 @@ function getOrigin(loc: Location) {
 function isExternal(anchorElement: Location) {
   // Location.origin and HTMLAnchorElement.origin are not
   // supported by IE and Safari.
-  return getOrigin(location) !== getOrigin(anchorElement);
+  return getOrigin(location) !== getOrigin(anchorElement)
 }
 
-export { getOrigin, isExternal };
+export { getOrigin, isExternal }

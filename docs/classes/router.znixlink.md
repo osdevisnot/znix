@@ -70,7 +70,7 @@ ___
 
 ▸ **render**(): `TemplateResult`
 
-Render a wired a tag with handling for click events
+Render a wired `<a></a>` tag with handling for click events
 
 **Returns:** `TemplateResult`
 

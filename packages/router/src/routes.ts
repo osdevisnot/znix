@@ -2,22 +2,22 @@
  * @module Routes
  */
 
-import { IRenderOptions, TemplateResult } from '@znix/component';
+import { IRenderOptions, TemplateResult } from '@znix/component'
 
 export type IRoute = {
-  path: string;
-  exact?: boolean;
-  render(options?: IRenderOptions): TemplateResult;
-};
+  path: string
+  exact?: boolean
+  render(options?: IRenderOptions): TemplateResult
+}
 
 export type IRouteParams = {
-  [index: string]: any;
-};
+  [index: string]: any
+}
 
 /**
  * Regex to match the path parameters
  */
-const parametersPattern = /(:[^\/]+)/g;
+const parametersPattern = /(:[^\/]+)/g
 
 /**
  * This helper function identifies if a single route matches the targeted location.
@@ -26,16 +26,16 @@ const parametersPattern = /(:[^\/]+)/g;
  * @param pathname target location to match towards
  */
 function routeMatcher(route: IRoute, pathname: string): any {
-  const match = new RegExp(route.path.replace(parametersPattern, '([^/]+)') + (route.exact ? '$' : '(/|$)'));
-  const params = (route.path.match(parametersPattern) || []).map(x => x.substring(1));
-  const matches = pathname.match(match);
+  const match = new RegExp(route.path.replace(parametersPattern, '([^/]+)') + (route.exact ? '$' : '(/|$)'))
+  const params = (route.path.match(parametersPattern) || []).map(x => x.substring(1))
+  const matches = pathname.match(match)
   if (!matches) {
-    return false;
+    return false
   }
   return params.reduce((acc: any, param, idx) => {
-    acc[param] = decodeURIComponent(matches[idx + 1]);
-    return acc;
-  }, {});
+    acc[param] = decodeURIComponent(matches[idx + 1])
+    return acc
+  }, {})
 }
 
 /**
@@ -48,10 +48,10 @@ function search(search: string): object {
     .split('&')
     .filter(param => param.length)
     .reduce((acc: any, part) => {
-      const [key, value] = part.split('=');
-      acc[decodeURIComponent(key)] = value ? decodeURIComponent(value) : null;
-      return acc;
-    }, {});
+      const [key, value] = part.split('=')
+      acc[decodeURIComponent(key)] = value ? decodeURIComponent(value) : null
+      return acc
+    }, {})
 }
 
 /**
@@ -61,13 +61,11 @@ function search(search: string): object {
  */
 function matchRoutes(routes: [IRoute], loc: Location) {
   let target = loc.pathname.replace(/[.*]+\/$/, ''),
-    params;
-  const route: IRoute | undefined = routes.find(r => (params = routeMatcher(r, target)));
-  if (!params) {
-    params = {};
-  }
-  const query: object = search(loc.search || '');
-  return { route, params, query };
+    params
+  const route: IRoute | undefined = routes.find(r => (params = routeMatcher(r, target)))
+  if (!params) params = {}
+  const query: object = search(loc.search || '')
+  return { route, params, query }
 }
 
-export { matchRoutes, routeMatcher, search };
+export { matchRoutes, routeMatcher, search }

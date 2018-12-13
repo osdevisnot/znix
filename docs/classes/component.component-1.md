@@ -14,14 +14,25 @@ Connected Component for Znix Applications
 
 ### Methods
 
+* [$c](component.component-1.md#_c)
 * [connectedCallback](component.component-1.md#connectedcallback)
 * [disconnectedCallback](component.component-1.md#disconnectedcallback)
-* [stateChanged](component.component-1.md#statechanged)
 
 ---
 
 ## Methods
 
+<a id="_c"></a>
+
+###  $c
+
+▸ **$c**(): `Promise`<`void`>
+
+Invoked each time the state in store changes.
+
+**Returns:** `Promise`<`void`>
+
+___
 <a id="connectedcallback"></a>
 
 ###  connectedCallback
@@ -40,17 +51,6 @@ ___
 ▸ **disconnectedCallback**(): `void`
 
 Invoked each time the custom element is disconnected from the document's DOM.
-
-**Returns:** `void`
-
-___
-<a id="statechanged"></a>
-
-###  stateChanged
-
-▸ **stateChanged**(): `void`
-
-Invoked each time the state in store changes.
 
 **Returns:** `void`
 

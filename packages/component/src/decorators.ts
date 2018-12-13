@@ -14,8 +14,8 @@
  *     Element('my-comp', MyComp)
  */
 function Element(tag: string, clx?: any): any {
-  if (clx) return customElements.define(tag, clx);
-  return (clazz: any) => customElements.define(tag, clazz);
+  if (clx) return customElements.define(tag, clx)
+  return (clz: any) => customElements.define(tag, clz)
 }
 
-export { Element };
+export { Element }
