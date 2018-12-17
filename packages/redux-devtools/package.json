@@ -1,6 +1,6 @@
 {
   "name": "@znix/redux-devtools",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
@@ -16,7 +16,7 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@znix/store": "0.1.15"
+    "@znix/store": "^0.1.16"
   },
   "publishConfig": {
     "access": "public"
