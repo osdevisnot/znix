@@ -13,7 +13,7 @@ const actions = {
   upBy: ({ state, payload }) => ({ count: state.count + payload })
 };
 
-store.register(initialState, actions);
+store.use(initialState, actions);
 
 class CounterComponent extends Component {
   render({ state, dispatch }) {

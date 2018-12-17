@@ -26,6 +26,7 @@ abstract class Component extends PureComponent {
    */
   disconnectedCallback() {
     store.off(this.$c)
+    super.disconnectedCallback()
   }
 }
 

@@ -7,11 +7,10 @@ import { render, TemplateResult } from 'lit-html'
 const NEEDS_RENDER = Symbol('NEEDS_RENDER')
 
 export type IRenderOptions = {
-  state: object
-  dispatch: Function
-}
-export type IRenderAdditionalOptions = {
-  [index: string]: any
+  state?: object
+  dispatch?: Function
+  params?: any
+  query?: any
 }
 
 /**
@@ -35,7 +34,14 @@ abstract class PureComponent extends HTMLElement {
    */
   constructor() {
     super()
-    this.$r = this.attachShadow({ mode: 'open' })
+    this.$r = this.createRoot()
+  }
+  /**
+   * Create a Shadow DOM root node for current component.
+   * Override this method to change root behaviour.
+   */
+  createRoot() {
+    return this.attachShadow({ mode: 'open' })
   }
   /**
    * Invoked each time the custom element is appended into a document-connected element. This will happen each time
@@ -43,6 +49,12 @@ abstract class PureComponent extends HTMLElement {
    */
   connectedCallback() {
     this.$f()
+  }
+  /**
+   * Invoked each time the custom element is removed from DOM.
+   */
+  disconnectedCallback() {
+    ;(this as any)[NEEDS_RENDER] = false
   }
   /**
    * Invoked each time one of the custom element's attributes is added, removed, or changed.
@@ -55,7 +67,7 @@ abstract class PureComponent extends HTMLElement {
    * flush the render cache to DOM. This method should not be overridden in extended class
    * @param options additional options to pass to instance's render function
    */
-  protected async $f(options?: IRenderAdditionalOptions) {
+  protected async $f(options?: IRenderOptions) {
     ;(this as any)[NEEDS_RENDER] = true
     await 0
     if ((this as any)[NEEDS_RENDER]) {

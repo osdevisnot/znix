@@ -17,7 +17,7 @@ describe('store', () => {
     expect(typeof unsub).toEqual('function')
   })
   it('can get state when registered', () => {
-    store.register({ count: 0 }, {})
+    store.use({ count: 0 }, {})
     expect(store.state).toEqual({ count: 0 })
   })
   it('can get state after setState', () => {
@@ -36,7 +36,7 @@ describe('store', () => {
     expect(store.state).toEqual({ name: 'new' })
   })
   it('can dispatch action', () => {
-    store.register(
+    store.use(
       { count: 10 },
       {
         up: ({ state, payload }: { state: any; payload: any }) => ({ count: state.count + 1 })
@@ -55,7 +55,7 @@ describe('store', () => {
     expect(fn2).toHaveBeenCalledTimes(1)
   })
   it('can dispatch action with payload', () => {
-    store.register(
+    store.use(
       {
         count: 10
       },
@@ -67,7 +67,7 @@ describe('store', () => {
     expect(store.state).toEqual({ count: 5, name: 'new' })
   })
   it('can dispatch async actions', async () => {
-    store.register(
+    store.use(
       {},
       {
         fetch: ({ state, payload }: { state: any; payload: any }) => {

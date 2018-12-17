@@ -28,6 +28,8 @@ Base class for Znix Components
 * [$f](purecomponent.purecomponent-1.md#_f)
 * [attributeChangedCallback](purecomponent.purecomponent-1.md#attributechangedcallback)
 * [connectedCallback](purecomponent.purecomponent-1.md#connectedcallback)
+* [createRoot](purecomponent.purecomponent-1.md#createroot)
+* [disconnectedCallback](purecomponent.purecomponent-1.md#disconnectedcallback)
 * [render](purecomponent.purecomponent-1.md#render)
 
 ---
@@ -80,7 +82,7 @@ ___
 
 ### `<Protected>` $f
 
-▸ **$f**(options?: *[IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions)*): `Promise`<`void`>
+▸ **$f**(options?: *[IRenderOptions](../modules/purecomponent.md#irenderoptions)*): `Promise`<`void`>
 
 flush the render cache to DOM. This method should not be overridden in extended class
 
@@ -88,7 +90,7 @@ flush the render cache to DOM. This method should not be overridden in extended 
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| `Optional` options | [IRenderAdditionalOptions](../modules/purecomponent.md#irenderadditionaloptions) |  additional options to pass to instance's render function |
+| `Optional` options | [IRenderOptions](../modules/purecomponent.md#irenderoptions) |  additional options to pass to instance's render function |
 
 **Returns:** `Promise`<`void`>
 
@@ -111,6 +113,28 @@ ___
 ▸ **connectedCallback**(): `void`
 
 Invoked each time the custom element is appended into a document-connected element. This will happen each time the node is moved, and may happen before the element's contents have been fully parsed.
+
+**Returns:** `void`
+
+___
+<a id="createroot"></a>
+
+###  createRoot
+
+▸ **createRoot**(): `ShadowRoot`
+
+Create a Shadow DOM root node for current component. Override this method to change root behaviour.
+
+**Returns:** `ShadowRoot`
+
+___
+<a id="disconnectedcallback"></a>
+
+###  disconnectedCallback
+
+▸ **disconnectedCallback**(): `void`
+
+Invoked each time the custom element is removed from DOM.
 
 **Returns:** `void`
 

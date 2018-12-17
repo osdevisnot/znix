@@ -187,24 +187,6 @@ Subscribe to store updates
 **Returns:** `Function`
 
 ___
-<a id="store-1.register"></a>
-
-####  register
-
-▸ **register**(state: *`any`*, actions?: *`Record`<`string`, [IActionHandler](store.md#iactionhandler)>*): `void`
-
-Register initial state and actions with store
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| state | `any` |  initial state |
-| `Optional` actions | `Record`<`string`, [IActionHandler](store.md#iactionhandler)> |  list of actions |
-
-**Returns:** `void`
-
-___
 <a id="store-1.setstate"></a>
 
 ####  setState
@@ -219,6 +201,24 @@ Set state and call store listeners
 | ------ | ------ | ------ |
 | state | `any` |  updated state |
 | action | `string` |  action triggering state update |
+
+**Returns:** `void`
+
+___
+<a id="store-1.use"></a>
+
+####  use
+
+▸ **use**(state: *`any`*, actions?: *`Record`<`string`, [IActionHandler](store.md#iactionhandler)>*): `void`
+
+Register initial state and actions with store
+
+**Parameters:**
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| state | `any` |  initial state |
+| `Optional` actions | `Record`<`string`, [IActionHandler](store.md#iactionhandler)> |  list of actions |
 
 **Returns:** `void`
 

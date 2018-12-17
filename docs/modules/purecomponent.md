@@ -10,7 +10,6 @@
 
 ### Type aliases
 
-* [IRenderAdditionalOptions](purecomponent.md#irenderadditionaloptions)
 * [IRenderOptions](purecomponent.md#irenderoptions)
 
 ### Variables
@@ -21,17 +20,6 @@
 
 ## Type aliases
 
-<a id="irenderadditionaloptions"></a>
-
-###  IRenderAdditionalOptions
-
-**Ƭ IRenderAdditionalOptions**: *`object`*
-
-#### Type declaration
-
-[index: `string`]: `any`
-
-___
 <a id="irenderoptions"></a>
 
 ###  IRenderOptions
@@ -40,9 +28,13 @@ ___
 
 #### Type declaration
 
- dispatch: `Function`
+`Optional`  dispatch: `Function`
 
- state: `object`
+`Optional`  params: `any`
+
+`Optional`  query: `any`
+
+`Optional`  state:  `undefined` &#124; `object`
 
 ___
 

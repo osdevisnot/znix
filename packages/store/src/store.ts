@@ -27,15 +27,7 @@ const store = {
    * @param handler an event handler
    */
   off(handler: IEventHandler) {
-    const newListeners = []
-    let i = 0,
-      len = _listeners.length
-    for (; i < len; i++) {
-      if (_listeners[i] !== handler) {
-        newListeners.push(_listeners[i])
-      }
-    }
-    _listeners = newListeners
+    _listeners = _listeners.filter(handle => handler !== handle)
   },
   /**
    * Subscribe to store updates
@@ -91,7 +83,7 @@ const store = {
    * @param state initial state
    * @param actions list of actions
    */
-  register(state: any, actions?: Record<string, IActionHandler>): void {
+  use(state: any, actions?: Record<string, IActionHandler>): void {
     _state = { ..._state, ...state }
     _actions = { ..._actions, ...actions }
   }

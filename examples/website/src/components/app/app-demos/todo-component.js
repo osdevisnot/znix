@@ -1,45 +1,45 @@
-import { Component, Element, html, PureComponent, store } from '@znix/znix';
+import { Component, Element, html, PureComponent, store } from '@znix/znix'
 
-const FILTERS = { all: 0, active: 1, completed: 2 };
+const FILTERS = { all: 0, active: 1, completed: 2 }
 
-const initialState = { input: '', todos: [], filter: FILTERS.all, uuid: 0 };
+const initialState = { input: '', todos: [], filter: FILTERS.all, uuid: 0 }
 
 const actions = {
   input: ({ payload }) => ({ input: payload }),
   save: ({ state, payload }) => {
-    const todos = state.todos;
-    todos.push({ id: state.uuid++, description: payload, done: false });
-    return { input: '', todos };
+    const todos = state.todos
+    todos.push({ id: state.uuid++, description: payload, done: false })
+    return { input: '', todos }
   },
   done: ({ state, payload }) => {
-    const todos = state.todos;
-    todos.map(todo => payload === todo.id && (todo.done = !todo.done));
-    return { todos };
+    const todos = state.todos
+    todos.map(todo => payload === todo.id && (todo.done = !todo.done))
+    return { todos }
   },
   delete: ({ state, payload }) => {
-    const todos = state.todos.filter(todo => todo.id !== payload);
-    return { todos };
+    const todos = state.todos.filter(todo => todo.id !== payload)
+    return { todos }
   },
   clear: ({ state }) => {
-    const todos = state.todos.filter(todo => !todo.done);
-    return { todos };
+    const todos = state.todos.filter(todo => !todo.done)
+    return { todos }
   },
   filter: ({ payload }) => ({ filter: payload }),
   fetch: () => {
-    return JSON.parse(localStorage.getItem('znix-state') || '{}');
+    return JSON.parse(localStorage.getItem('znix-state') || '{}')
   }
-};
+}
 
-store.register(initialState, actions);
-store.dispatch('fetch');
-store.on((state, action) => localStorage.setItem('znix-state', JSON.stringify(state)));
+store.use(initialState, actions)
+store.dispatch('fetch')
+store.on((state, action) => localStorage.setItem('znix-state', JSON.stringify(state)))
 
 class TodoInput extends Component {
   handleInput(event) {
     if (event.keyCode !== 13) {
-      store.dispatch('input', event.target.value);
+      store.dispatch('input', event.target.value)
     } else {
-      store.dispatch('save', event.target.value);
+      store.dispatch('save', event.target.value)
     }
   }
   render({ state }) {
@@ -61,15 +61,15 @@ class TodoInput extends Component {
         }
       </style>
       <input placeholder="What needs to be done ?" .value="${state.input}" @keyup="${this.handleInput}" autofocus />
-    `;
+    `
   }
 }
-Element('todo-input', TodoInput);
+Element('todo-input', TodoInput)
 class TodoList extends Component {
   render({ state }) {
     const todos = state.todos.filter(todo =>
       state.filter === FILTERS.active ? !todo.done : state.filter === FILTERS.completed ? todo.done : todo
-    );
+    )
     return html`
       <style>
         :host ul {
@@ -87,10 +87,10 @@ class TodoList extends Component {
           )
         }
       </ul>
-    `;
+    `
   }
 }
-Element('todo-list', TodoList);
+Element('todo-list', TodoList)
 
 class TodoItem extends Component {
   render({ state, dispatch }) {
@@ -146,13 +146,13 @@ class TodoItem extends Component {
         <span class="${this.todo.done ? 'checked' : ''}">${this.todo.description}</span>
         <button @click="${e => dispatch('delete', this.todo.id)}">X</button>
       </li>
-    `;
+    `
   }
 }
-Element('todo-item', TodoItem);
+Element('todo-item', TodoItem)
 class TodoFilter extends Component {
   render({ state, dispatch }) {
-    const done = state.todos.filter(todo => !todo.done);
+    const done = state.todos.filter(todo => !todo.done)
     return html`
       <style>
         :host {
@@ -194,10 +194,10 @@ class TodoFilter extends Component {
           Clear Completed
         </button>
       </div>
-    `;
+    `
   }
 }
-Element('todo-filter', TodoFilter);
+Element('todo-filter', TodoFilter)
 
 class TodoFooter extends PureComponent {
   render() {
@@ -214,10 +214,10 @@ class TodoFooter extends PureComponent {
         }
       </style>
       Created with ❤️ by <a href="https://github.com/osdevisnot">osdevisnot</a>
-    `;
+    `
   }
 }
-Element('todo-footer', TodoFooter);
+Element('todo-footer', TodoFooter)
 
 class TodoComponent extends PureComponent {
   render({ state, dispatch }) {
@@ -247,7 +247,7 @@ class TodoComponent extends PureComponent {
         <todo-filter></todo-filter>
       </div>
       <todo-footer></todo-footer>
-    `;
+    `
   }
 }
-Element('todo-component', TodoComponent);
+Element('todo-component', TodoComponent)
