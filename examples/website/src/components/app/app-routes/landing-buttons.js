@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class LandingButtons extends PureComponent {
   render() {
@@ -15,9 +15,9 @@ class LandingButtons extends PureComponent {
           border: 1px solid white;
         }
       </style>
-      <znix-link to="/docs">Quick Start</znix-link>
+      <znix-link to="/starter">Quick Start</znix-link>
       <znix-link to="/demos">Demos</znix-link>
-    `;
+    `
   }
 }
-Element('landing-buttons', LandingButtons);
+Element('landing-buttons', LandingButtons)

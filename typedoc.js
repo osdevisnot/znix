@@ -1,4 +1,4 @@
-const pkg = require('./package.json');
+const pkg = require('./package.json')
 
 module.exports = {
   theme: 'markdown',
@@ -17,4 +17,4 @@ module.exports = {
   // excludeNotExported: true,
   excludeExternals: true,
   exclude: ['**/test/**/*', '**/dist/**/*', '**/devtools.ts', '**/znix.ts', '**/aux/**/*', '**/_website/**/*']
-};
+}

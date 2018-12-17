@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class DemoNavigation extends PureComponent {
   render({ state, dispatch }) {
@@ -24,7 +24,7 @@ class DemoNavigation extends PureComponent {
         <li><znix-link to="/demos/about">About</znix-link></li>
         <li><znix-link to="/demos/todo">Todo</znix-link></li>
       </header>
-    `;
+    `
   }
 }
-Element('demo-navigation', DemoNavigation);
+Element('demo-navigation', DemoNavigation)

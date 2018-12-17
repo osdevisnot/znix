@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class npmInstall extends PureComponent {
   render() {
@@ -13,4 +13,4 @@ class npmInstall extends PureComponent {
     `
   }
 }
-Element('npm-install', npmInstall);
+Element('npm-install', npmInstall)

@@ -1,6 +1,6 @@
-const bundles = require('tslib-cli');
+const bundles = require('tslib-cli')
 
-const isDev = !!process.env.ROLLUP_WATCH;
+const isDev = !!process.env.ROLLUP_WATCH
 
 export default bundles([
   {
@@ -10,4 +10,4 @@ export default bundles([
     minify: !isDev,
     tsconfigOverride: isDev ? {} : { compilerOptions: { declaration: false } }
   }
-]);
+])

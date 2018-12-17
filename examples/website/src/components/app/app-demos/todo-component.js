@@ -67,8 +67,8 @@ class TodoInput extends Component {
 Element('todo-input', TodoInput)
 class TodoList extends Component {
   render({ state }) {
-    const todos = state.todos.filter(todo =>
-      state.filter === FILTERS.active ? !todo.done : state.filter === FILTERS.completed ? todo.done : todo
+    const todos = state.todos.filter(
+      todo => (state.filter === FILTERS.active ? !todo.done : state.filter === FILTERS.completed ? todo.done : todo)
     )
     return html`
       <style>
@@ -78,14 +78,12 @@ class TodoList extends Component {
         }
       </style>
       <ul>
-        ${
-          todos.map(
-            todo =>
-              html`
+        ${todos.map(
+          todo =>
+            html`
                 <todo-item .todo="${todo}"></todo-item>
               `
-          )
-        }
+        )}
       </ul>
     `
   }

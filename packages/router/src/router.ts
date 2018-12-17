@@ -41,6 +41,7 @@ abstract class Router extends PureComponent {
   disconnectedCallback() {
     window.removeEventListener('pushState', this.renderRoute)
     window.removeEventListener('popstate', this.renderRoute)
+    super.disconnectedCallback()
   }
 }
 

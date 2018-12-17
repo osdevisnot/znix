@@ -1,22 +1,22 @@
-const path = require('path');
-const fs = require('fs');
-const showdown = require('showdown');
-showdown.setFlavor('github');
+const path = require('path')
+const fs = require('fs')
+const showdown = require('showdown')
+showdown.setFlavor('github')
 
-const converter = new showdown.Converter();
+const converter = new showdown.Converter()
 
-const guides = ['quick-start', 'npm-install', 'znix-components', 'znix-router', 'znix-store'];
+const guides = ['quick-start', 'npm-install', 'znix-components', 'znix-router', 'znix-store']
 
 guides.forEach(guide => {
-  const text = fs.readFileSync(path.join('..', '..', 'guides', `${guide}.md`)) + '';
+  const text = fs.readFileSync(path.join('..', '..', 'guides', `${guide}.md`)) + ''
   var clz = guide.replace(/-([a-z])/g, function(g) {
-    return g[1].toUpperCase();
-  });
+    return g[1].toUpperCase()
+  })
 
   let html = converter
     .makeHtml(text)
     .replace(/\$/g, '\\$')
-    .replace(/\`/g, '\\`');
+    .replace(/\`/g, '\\`')
   html = `import { Element, html, PureComponent } from '@znix/znix';
 
 class ${clz} extends PureComponent {
@@ -26,7 +26,7 @@ class ${clz} extends PureComponent {
     \`
   }
 }
-Element('${guide}', ${clz});`;
+Element('${guide}', ${clz});`
 
-  fs.writeFileSync(path.join('src', 'components', 'app', 'app-guides', `${guide}.js`), html);
-});
+  fs.writeFileSync(path.join('src', 'components', 'app', 'app-guides', `${guide}.js`), html)
+})

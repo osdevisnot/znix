@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class znixStore extends PureComponent {
   render() {
@@ -8,4 +8,4 @@ class znixStore extends PureComponent {
     `
   }
 }
-Element('znix-store', znixStore);
+Element('znix-store', znixStore)

@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class quickStart extends PureComponent {
   render() {
@@ -31,4 +31,4 @@ Element('counter-component', CounterComponent);</code></pre>
     `
   }
 }
-Element('quick-start', quickStart);
+Element('quick-start', quickStart)

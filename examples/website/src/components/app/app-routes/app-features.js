@@ -45,16 +45,14 @@ class AppFeatures extends PureComponent {
           text-align: justify;
         }
       </style>
-      ${
-        this.features.map(
-          feature => html`
+      ${this.features.map(
+        feature => html`
             <div class="feature">
               <h3 class="title">${feature.title}</h3>
               <div class="description">${feature.description}</div>
             </div>
           `
-        )
-      }
+      )}
     `
   }
 }

@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class znixRouter extends PureComponent {
   render() {
@@ -8,4 +8,4 @@ class znixRouter extends PureComponent {
     `
   }
 }
-Element('znix-router', znixRouter);
+Element('znix-router', znixRouter)

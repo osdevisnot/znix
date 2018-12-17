@@ -16,5 +16,8 @@
     "**/dist/**": true,
     "**/LICENSE": true,
     "**/package-lock.json": true
-  }
+  },
+  "prettier.printWidth": 120,
+  "prettier.semi": false,
+  "prettier.singleQuote": true
 }

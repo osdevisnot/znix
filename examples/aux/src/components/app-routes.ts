@@ -1,4 +1,4 @@
-import { html, Router, Element } from '@znix/znix';
+import { html, Router, Element } from '@znix/znix'
 
 class AppRoutes extends Router {
   routes() {
@@ -8,7 +8,7 @@ class AppRoutes extends Router {
         render() {
           return html`
             <home-component></home-component>
-          `;
+          `
         }
       },
       {
@@ -16,7 +16,7 @@ class AppRoutes extends Router {
         render() {
           return html`
             <counter-component></counter-component>
-          `;
+          `
         }
       },
       {
@@ -24,7 +24,7 @@ class AppRoutes extends Router {
         render() {
           return html`
             <todo-component></todo-component>
-          `;
+          `
         }
       },
       {
@@ -32,10 +32,10 @@ class AppRoutes extends Router {
         render() {
           return html`
             <about-component></about-component>
-          `;
+          `
         }
       }
-    ];
+    ]
   }
 }
-Element('app-routes', AppRoutes);
+Element('app-routes', AppRoutes)

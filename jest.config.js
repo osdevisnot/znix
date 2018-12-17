@@ -8,4 +8,4 @@ module.exports = {
   transform: { '.(ts|tsx|js|jsx)': 'ts-jest' },
   transformIgnorePatterns: ['node_modules/(?!(lit-html)/)'],
   coverageThreshold: { global: { branches: 65, functions: 80, lines: 85, statements: 80 } }
-};
+}
