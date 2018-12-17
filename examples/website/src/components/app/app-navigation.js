@@ -1,4 +1,4 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class AppNavigation extends PureComponent {
   render() {
@@ -6,7 +6,7 @@ class AppNavigation extends PureComponent {
       <style>
         :host {
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
           flex-wrap: nowrap;
           padding: 0 10px 0 0;
         }
@@ -26,7 +26,7 @@ class AppNavigation extends PureComponent {
       <ul>
         <znix-link to="https://github.com/osdevisnot/znix">Github</znix-link>
       </ul>
-    `;
+    `
   }
 }
-Element('app-navigation', AppNavigation);
+Element('app-navigation', AppNavigation)

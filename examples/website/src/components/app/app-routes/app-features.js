@@ -1,13 +1,13 @@
-import { Element, html, PureComponent } from '@znix/znix';
+import { Element, html, PureComponent } from '@znix/znix'
 
 class AppFeatures extends PureComponent {
   constructor() {
-    super();
+    super()
     this.features = [
       {
         title: 'Lightweight',
         description: html`
-          <strong>< 5KB</strong> (min + gzip), incliding components, store and a router.
+          <strong>< 5KB</strong> (min + gzip), including components, store and a router.
         `
       },
       {
@@ -18,12 +18,11 @@ class AppFeatures extends PureComponent {
         `
       },
       { title: 'Future Proof', description: 'Based on Web Components standards. No more Framework fatigue' },
-      // { title: 'Simple', description: 'Tiny API and Familier Concepts.' },
       {
         title: 'Instantly Productive',
         description: 'Be instantly productive with Refresh Workflow and optional Typescript support.'
       }
-    ];
+    ]
   }
 
   render() {
@@ -32,17 +31,15 @@ class AppFeatures extends PureComponent {
         :host {
           display: flex;
           align-items: center;
-          justify-content: space-around;
-          flex-wrap: wrap;
-          /* border: 1px dotted; */
+          flex-direction: column;
         }
         :host .feature {
           width: 44vw;
-          margin: 20px;
+          margin: 10px;
           border: 1px dotted;
         }
         :host .title {
-          text-align: left;
+          text-align: center;
         }
         :host .description {
           text-align: justify;
@@ -58,7 +55,7 @@ class AppFeatures extends PureComponent {
           `
         )
       }
-    `;
+    `
   }
 }
-Element('app-features', AppFeatures);
+Element('app-features', AppFeatures)
