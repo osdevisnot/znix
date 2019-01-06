@@ -38,7 +38,7 @@ abstract class PureComponent extends HTMLElement {
   }
   /**
    * Create a Shadow DOM root node for current component.
-   * Override this method to change root behaviour.
+   * Override this method to change root behavior.
    */
   createRoot() {
     return this.attachShadow({ mode: 'open' })
