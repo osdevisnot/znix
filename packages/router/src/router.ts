@@ -24,7 +24,7 @@ abstract class Router extends PureComponent {
     const { route, params, query } = matchRoutes(this.routes(), location)
     if (route && route.render) {
       this.render = route.render
-      super.$f({ params, query })
+      super.__flush__({ params, query })
     }
   }
   /**

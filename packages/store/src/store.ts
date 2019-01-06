@@ -57,7 +57,7 @@ const store = {
    * @param state updated state
    * @param action action triggering state update
    */
-  $o(state: any, action: string) {
+  __overrideState__(state: any, action: string) {
     _state = { ...state }
     emit(_state, action)
   },

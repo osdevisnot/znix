@@ -119,11 +119,11 @@ ___
 
 Super simple pub/sub, event emitter for Znix applications
 
-<a id="store-1._o"></a>
+<a id="store-1.__overridestate__"></a>
 
-####  $o
+####  __overrideState__
 
-▸ **$o**(state: *`any`*, action: *`string`*): `void`
+▸ **__overrideState__**(state: *`any`*, action: *`string`*): `void`
 
 **Parameters:**
 

@@ -12,7 +12,7 @@ if (!(store as any).devtools) {
   ;(store as any).devtools.subscribe((message: any) => {
     if (message.type === 'DISPATCH' && message.state) {
       ignore = message.payload.type === 'JUMP_TO_ACTION' || message.payload.type === 'JUMP_TO_STATE'
-      store.$o(JSON.parse(message.state), message.payload.type)
+      store.__overrideState__(JSON.parse(message.state), message.payload.type)
     }
   })
   ;(store as any).devtools.init(store.state)
