@@ -1,6 +1,6 @@
 {
   "name": "@znix/znix",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A javascript micro-framework for Next Generation Web Apps",
   "license": "MIT",
   "author": "osdevisnot <osdevisnot@gmail.com>",
@@ -16,9 +16,9 @@
     "start": "rollup -wc"
   },
   "dependencies": {
-    "@znix/component": "^0.1.16",
-    "@znix/router": "^0.1.16",
-    "@znix/store": "^0.1.16"
+    "@znix/component": "^0.1.17",
+    "@znix/router": "^0.1.17",
+    "@znix/store": "^0.1.17"
   },
   "devDependencies": {
     "tslib-cli": "0.0.27"
