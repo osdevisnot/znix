@@ -27,7 +27,7 @@
     "semi": false
   },
   "devDependencies": {
-    "lerna": "3.8.5",
+    "lerna": "3.13.4",
     "tslib-cli": "0.0.27"
   }
 }
