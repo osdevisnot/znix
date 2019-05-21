@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@znix/store": "^0.1.17",
-    "lit-html": "1.0.0-rc.1"
+    "lit-html": "1.1.0"
   },
   "publishConfig": {
     "access": "public"
