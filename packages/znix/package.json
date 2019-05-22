@@ -21,7 +21,7 @@
     "@znix/store": "^0.1.17"
   },
   "devDependencies": {
-    "tslib-cli": "0.0.27"
+    "tslib-cli": "2.0.13"
   },
   "publishConfig": {
     "access": "public"
